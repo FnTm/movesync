@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App itself</title>
+    <script type="text/javascript" src="js/jwplayer.js" ></script>
+
+</head>
+<body>
+<div id="player">Here be teh music player</div>
+
+<script type="text/javascript">
+    jwplayer("player").setup({
+        flashplayer: 'assets/jwplayer.flash.swf',
+        file: "assets/sudmalinas.mp3",
+        height: 24,
+        width: 640,
+        controlbar: 'bottom'
+    });
+</script>
+</body>
+</html>
