@@ -24,7 +24,22 @@ audio {
     height: 600px;
 }
 
-
+.example .demo {
+    background-image: url("../assets/u.png");
+    position: absolute;
+    left: 92px;
+    top: 103px;
+    /*background-color: #f00;*/
+    text-align: center;
+    line-height: 1.5em;
+    /*border: solid 1px #cc0000;*/
+    /*            border-radius: 0;
+                -moz-box-shadow: 3px 3px 7px rgba(0,0,0,0.4);
+                -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.4);*/
+    width: 20px;
+    height: 20px;
+    background-size:cover;
+}
 
 .dot {
     position: absolute;
@@ -163,4 +178,8 @@ body {
 .songName {
  font-size: 1.9em;
  padding-left: 4%;
+}
+.findMe{
+    background-color: #b22222;
+
 }

@@ -54,6 +54,7 @@ bottomLeft=null;
 bottomRight=null;
 globalY=null;
 dancers=[];
+init=false;
 moveFrame=function(movement){
     Y=globalY;
 
@@ -68,8 +69,11 @@ moveFrame=function(movement){
                     duration: movement.duration/1000,
                     easing: Y.Easing.easeNone
                 });
+                if(!init){
               //  movement.path[i].movement.x;
                 dancers[i].setStyles({'left':10+(i*offset), 'top':height/2});
+                init=true;
+            }
 
                 animations[i].set('to', {
                     curve: [[bottomLeft[0]+10+(i*offset), bottomLeft[1]-(height/2) ], [topLeft[0]+(i*offset), topLeft[1]+(i*offset) ],[topLeft[0]+(width/2), topLeft[1]+10+(i*offset)],[topLeft[0]+(width/2), topLeft[1]+10+(i*offset)]],
