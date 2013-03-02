@@ -6,20 +6,22 @@
  * To change this template use File | Settings | File Templates.
  */
 YUI().use('anim', 'dd-drag', 'graphics', 'cssbutton', function(Y){
-
+//debugger;
     var mygraphic = new Y.Graphic({render:"#mygraphiccontainer"}),
+
         origin = Y.one('.example'), // The XY values for the animation are based on the upper-left corner of this element
         demoA = Y.one('#demo'), // The animated element
-        dotList = Y.all('.dot');
-    // Draggable points
-    dot0 = Y.one('#dot-0'), dot1 = Y.one('#dot-1'),  dot3 = Y.one('#dot-3'),
-
-        // Array of XY arrays of draggable points
+        dotList = Y.all('.dot'),
         arrDot = [
             [parseInt(dotList.item(0).getStyle('left'), 10), parseInt(dotList.item(0).getStyle('top'), 10)],
             [parseInt(dotList.item(1).getStyle('left'), 10), parseInt(dotList.item(1).getStyle('top'), 10)],
             [parseInt(dotList.item(2).getStyle('left'), 10), parseInt(dotList.item(2).getStyle('top'), 10)]
-        ],
+        ];
+    // Draggable points
+    /*dot0 = Y.one('#dot-0'), dot1 = Y.one('#dot-1'),  dot3 = Y.one('#dot-3'),
+
+        // Array of XY arrays of draggable points
+       ,
 
         // Make points draggable
         dd0 = new Y.DD.Drag({
@@ -38,7 +40,7 @@ YUI().use('anim', 'dd-drag', 'graphics', 'cssbutton', function(Y){
         Y.one('.arr1').setHTML(arrDot[1][0] + ',' + arrDot[1][1]); // Control point 1
         // Control point 2
         Y.one('.arr3').setHTML(arrDot[2][0] + ',' + arrDot[2][1]); // End
-    }
+    }*/
 
     /**
      * Stops the animation
@@ -53,7 +55,7 @@ YUI().use('anim', 'dd-drag', 'graphics', 'cssbutton', function(Y){
         updateCodeSnippetValues();
     }
 
-    dd0.on('drag:drag', function(e){
+    /*dd0.on('drag:drag', function(e){
         dotDragHandler(this.get('dragNode'));
     });
     dd1.on('drag:drag', function(e){
@@ -61,7 +63,7 @@ YUI().use('anim', 'dd-drag', 'graphics', 'cssbutton', function(Y){
     });
     dd3.on('drag:drag', function(e){
         dotDragHandler(this.get('dragNode'));
-    });
+    });*/
 
     // button handler
     Y.one('#btn-animate').on('click', function(){
@@ -77,14 +79,21 @@ YUI().use('anim', 'dd-drag', 'graphics', 'cssbutton', function(Y){
     var anim = new Y.Anim({
         node: demoA,
         duration: 2.5,
-        easing: Y.Easing.easeBoth
+        easing: Y.Easing.easeNone
     });
-
+    var anim2 = new Y.Anim({
+        node: demoA,
+        duration: 2.5,
+        easing: Y.Easing.easeNone
+    });
+    firstrun=false;
+    fr2=false;
     /**
      * Sets the anim curve values with the XY values from the arrDot array
      * Adds the origin offset values because anim works off page coordinates
      */
     var startAnim = function(e){
+        //debugger;
         var oX = origin.getX(),
             oY = origin.getY();
 
@@ -95,8 +104,37 @@ YUI().use('anim', 'dd-drag', 'graphics', 'cssbutton', function(Y){
         anim.set('to', {
             curve: [ [(arrDot[1][0] + oX), (arrDot[1][1] + oY)], [ (arrDot[2][0] + oX), (arrDot[2][1] + oY) ], [ (30 + oX), (500 + oY) ]  ]
         });
+        if(!firstrun){
+        anim.on("end",function(){
+            startAnim2();
+            firstrun=true;
+        });
+    }
         anim.run();
+
     };
+    var startAnim2 = function(e){
+
+        var oX = origin.getX(),
+            oY = origin.getY();
+
+        // Reset the animated element to the start position.
+        // This is needed for running the animation multiple times
+        demoA.setStyles({'left':(30 + oX), 'top':(500 + oY)});
+
+        anim2.set('to', {
+            curve: [[ (30 + oX), (500 + oY) ], [(arrDot[0][0] + oX), (arrDot[0][1] + oY)]   ]
+        });
+        if(!fr2){
+        anim2.on("end",function(){
+            startAnim();
+            fr2=true;
+        });
+    }
+        anim2.run();
+
+    };
+
 
     // Adds a YUI Graphics path shape to the Graphics instance mygraphic
     var animPath = mygraphic.addShape({
@@ -116,6 +154,6 @@ YUI().use('anim', 'dd-drag', 'graphics', 'cssbutton', function(Y){
     }
 
     drawCurve(); // Initial drawing of the preview curve
-    updateCodeSnippetValues(); // Initial setting of code snippet XY values
+    //updateCodeSnippetValues(); // Initial setting of code snippet XY values
 
 });
