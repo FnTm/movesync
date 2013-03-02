@@ -116,10 +116,10 @@ function Mover(graphicContainerId, canvasId, isReadyCallback) {
 
 		dancerObj.anim.set('to', {
 			curve: otherPoints,
-			rotate : '360'
+			rotate : '90'
 		});
 		dancerObj.anim.set('from', {
-			rotate : '0'
+			rotate : '90'
 		});
 
 		dancerObj.anim.on("end",function(){

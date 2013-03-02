@@ -1,86 +1,102 @@
 var danceVar = {
 		stageSize : {width:1000, height:1000},
 		dancers : 	[
-			{class : "boy", id : 1}, {class : "boy", id : 2}, {class : "boy", id : 3}, {class : "boy", id : 4},
-			{class : "girl", id : 1}, {class : "girl", id : 2}, {class : "girl", id : 3}, {class : "girl", id : 4}],
+			{class : "tank", id : 1}, {class : "tank", id : 2}, {class : "tank", id : 3}, {class : "tank", id : 4},
+			{class : "tank", id : 1}, {class : "tank", id : 2}, {class : "tank", id : 3}, {class : "tank", id : 4}],
 		frames : [
 			{
 				time : 0,
-				duration : 1000,
+				duration : 2000,
 				descriptionId : 0,
 				path : [
-					{class:"boy", id: 1, movement : [{X: 900, Y: 450}, {X: 900, Y: 450}], rotation : 66.75},
-					{class:"boy", id: 2, movement : [{X: 900, Y: 550}, {X: 900, Y: 550}], rotation : 156.75},
-					{class:"boy", id: 3, movement : [{X: 850, Y: 450}, {X: 850, Y: 450}], rotation : 246.75},
-					{class:"boy", id: 4, movement : [{X: 850, Y: 550}, {X: 850, Y: 550}], rotation : 336.75},
-					{class:"girl", id: 1, movement : [{X: 800, Y: 450}, {X: 800, Y: 450}], rotation : 22.25},
-					{class:"girl", id: 2, movement : [{X: 800, Y: 550}, {X: 800, Y: 550}], rotation : 112.25},
-					{class:"girl", id: 3, movement : [{X: 750, Y: 450}, {X: 750, Y: 450}], rotation : 202.25},
-					{class:"girl", id: 4, movement : [{X: 750, Y: 550}, {X: 750, Y: 550}], rotation : 292.25}
+					{class:"tank", id: 1, movement : [{X: 900, Y: 450}, {X: 900, Y: 450}], rotation : 66.75},
+					{class:"tank", id: 2, movement : [{X: 900, Y: 550}, {X: 900, Y: 550}], rotation : 156.75},
+					{class:"tank", id: 3, movement : [{X: 850, Y: 450}, {X: 850, Y: 450}], rotation : 246.75},
+					{class:"tank", id: 4, movement : [{X: 850, Y: 550}, {X: 850, Y: 550}], rotation : 336.75},
+					{class:"tank", id: 1, movement : [{X: 800, Y: 450}, {X: 800, Y: 450}], rotation : 22.25},
+					{class:"tank", id: 2, movement : [{X: 800, Y: 550}, {X: 800, Y: 550}], rotation : 112.25},
+					{class:"tank", id: 3, movement : [{X: 750, Y: 450}, {X: 750, Y: 450}], rotation : 202.25},
+					{class:"tank", id: 4, movement : [{X: 750, Y: 550}, {X: 750, Y: 550}], rotation : 292.25}
 					]
 			},
 			{
-				time : 1,
+				time : 2,
 				duration : 2000,
 				descriptionId : 1,
 				path : [
-                    {class:"boy", id: 1, movement : [{X: 900, Y: 450}, {X: 800, Y: 450}], rotation : 66.75},
-                    {class:"boy", id: 2, movement : [{X: 900, Y: 550}, {X: 800, Y: 550}], rotation : 156.75},
-                    {class:"boy", id: 3, movement : [{X: 850, Y: 450}, {X: 750, Y: 450}], rotation : 246.75},
-                    {class:"boy", id: 4, movement : [{X: 850, Y: 550}, {X: 750, Y: 550}], rotation : 336.75},
-                    {class:"girl", id: 1, movement : [{X: 800, Y: 450}, {X: 700, Y: 450}], rotation : 22.25},
-                    {class:"girl", id: 2, movement : [{X: 800, Y: 550}, {X: 700, Y: 550}], rotation : 112.25},
-                    {class:"girl", id: 3, movement : [{X: 750, Y: 450}, {X: 650, Y: 450}], rotation : 202.25},
-                    {class:"girl", id: 4, movement : [{X: 750, Y: 550}, {X: 650, Y: 550}], rotation : 292.25}
+                    {class:"tank", id: 1, movement : [{X: 900, Y: 450}, {X: 800, Y: 450}], rotation : 66.75},
+                    {class:"tank", id: 2, movement : [{X: 900, Y: 550}, {X: 800, Y: 550}], rotation : 156.75},
+                    {class:"tank", id: 3, movement : [{X: 850, Y: 450}, {X: 750, Y: 450}], rotation : 246.75},
+                    {class:"tank", id: 4, movement : [{X: 850, Y: 550}, {X: 750, Y: 550}], rotation : 336.75},
+                    {class:"tank", id: 1, movement : [{X: 800, Y: 450}, {X: 700, Y: 450}], rotation : 22.25},
+                    {class:"tank", id: 2, movement : [{X: 800, Y: 550}, {X: 700, Y: 550}], rotation : 112.25},
+                    {class:"tank", id: 3, movement : [{X: 750, Y: 450}, {X: 650, Y: 450}], rotation : 202.25},
+                    {class:"tank", id: 4, movement : [{X: 750, Y: 550}, {X: 650, Y: 550}], rotation : 292.25}
                 ]
 			},
 			{
-				time : 3,
+				time : 4,
 				duration : 2000,
 				descriptionId : 0,
 				path : [
-					{class:"boy", id: 3, movement : [ {X: 800, Y: 450}, {X: 700, Y: 325}], rotation : 66.75},
-					{class:"boy", id: 4, movement : [{X: 800, Y: 550}, {X: 700, Y: 450}], rotation : 156.75},
-					{class:"boy", id: 1, movement : [{X: 750, Y: 450}, {X: 650, Y: 325}], rotation : 246.75},
-					{class:"boy", id: 2, movement : [{X: 750, Y: 550}, {X: 650, Y: 450}], rotation : 336.75},
-					{class:"girl", id: 3, movement : [{X: 700, Y: 450}, {X: 600, Y: 325}], rotation : 22.25},
-					{class:"girl", id: 4, movement : [{X: 700, Y: 550}, {X: 600, Y: 450}], rotation : 112.25},
-					{class:"girl", id: 1, movement : [{X: 650, Y: 450}, {X: 550, Y: 325}], rotation : 202.25},
-					{class:"girl", id: 2, movement : [{X: 650, Y: 550}, {X: 550, Y: 450}], rotation : 292.25}
+					{class:"tank", id: 3, movement : [ {X: 800, Y: 450}, {X: 700, Y: 325}], rotation : 66.75},
+					{class:"tank", id: 4, movement : [{X: 800, Y: 550}, {X: 700, Y: 450}], rotation : 156.75},
+					{class:"tank", id: 1, movement : [{X: 750, Y: 450}, {X: 650, Y: 325}], rotation : 246.75},
+					{class:"tank", id: 2, movement : [{X: 750, Y: 550}, {X: 650, Y: 450}], rotation : 336.75},
+					{class:"tank", id: 3, movement : [{X: 700, Y: 450}, {X: 600, Y: 325}], rotation : 22.25},
+					{class:"tank", id: 4, movement : [{X: 700, Y: 550}, {X: 600, Y: 450}], rotation : 112.25},
+					{class:"tank", id: 1, movement : [{X: 650, Y: 450}, {X: 550, Y: 325}], rotation : 202.25},
+					{class:"tank", id: 2, movement : [{X: 650, Y: 550}, {X: 550, Y: 450}], rotation : 292.25}
 					]
 			}
 			,
 			{
-				time : 5,
-				duration : 1500,
+				time : 6,
+				duration : 2000,
 				descriptionId : 0,
 				path : [
-					{class:"boy", id: 3, movement : [ {X: 800, Y: 450}, {X: 700, Y: 325}], rotation : 66.75},
-					{class:"boy", id: 4, movement : [{X: 800, Y: 550}, {X: 700, Y: 450}], rotation : 156.75},
-					{class:"boy", id: 1, movement : [{X: 750, Y: 450}, {X: 650, Y: 325}], rotation : 246.75},
-					{class:"boy", id: 2, movement : [{X: 750, Y: 550}, {X: 650, Y: 450}], rotation : 336.75},
-					{class:"girl", id: 3, movement : [{X: 700, Y: 450}, {X: 600, Y: 525}], rotation : 22.25},
-					{class:"girl", id: 4, movement : [{X: 700, Y: 550}, {X: 600, Y: 750}], rotation : 112.25},
-					{class:"girl", id: 1, movement : [{X: 650, Y: 450}, {X: 550, Y: 525}], rotation : 202.25},
-					{class:"girl", id: 2, movement : [{X: 650, Y: 550}, {X: 550, Y: 750}], rotation : 292.25}
+					{class:"tank", id: 3, movement : [ {X: 700, Y: 325}, {X: 700, Y: 325}], rotation : 66.75},
+					{class:"tank", id: 4, movement : [{X: 700, Y: 450}, {X: 700, Y: 450}], rotation : 156.75},
+					{class:"tank", id: 1, movement : [{X: 650, Y: 325}, {X: 650, Y: 325}], rotation : 246.75},
+					{class:"tank", id: 2, movement : [{X: 650, Y: 450}, {X: 650, Y: 450}], rotation : 336.75},
+					{class:"tank", id: 3, movement : [ {X: 600, Y: 325}, {X: 600, Y: 525}], rotation : 22.25},
+					{class:"tank", id: 4, movement : [ {X: 600, Y: 450}, {X: 600, Y: 750}], rotation : 112.25},
+					{class:"tank", id: 1, movement :  [{X: 550, Y: 325}, {X: 550, Y: 525}], rotation : 202.25},
+					{class:"tank", id: 2, movement :  [{X: 550, Y: 450}, {X: 550, Y: 750}], rotation : 292.25}
 					]
 			}
-//            ,
-//			{
-//				time : 15,
-//				duration : 500,
-//				descriptionId : 1,
-//				path : [
-//					{class:"boy", id: 3, movement : [{X: 875, Y: 625}, {X: 1000, Y: 250}], rotation : 156.75},
-//					{class:"boy", id: 4, movement : [{X: 625, Y: 125}, {X: 250, Y: 0}], rotation : 246.75},
-//					{class:"boy", id: 1, movement : [{X: 125, Y: 625}, {X: 0, Y: 750}], rotation : 336.75},
-//					{class:"boy", id: 2, movement : [{X: 375, Y: 875}, {X: 750, Y: 1000}], rotation : 66.75},
-//					{class:"girl", id: 3, movement : [{X: 625, Y: 875}, {X: 1000, Y: 750}], rotation : 112.25},
-//					{class:"girl", id: 4, movement : [{X: 875, Y: 375}, {X: 750, Y: 0}], rotation : 202.25},
-//					{class:"girl", id: 1, movement : [{X: 375, Y: 125}, {X: 0, Y: 250}], rotation : 202.25},
-//					{class:"girl", id: 2, movement : [{X: 125, Y: 625}, {X: 250, Y: 100}], rotation : 22.25}
-//					]
-//			}
+			,
+			{
+				time : 8,
+				duration : 5000,
+				descriptionId : 0,
+				path : [
+					{class:"tank", id: 3, movement : [{X: 700, Y: 325}, 	{X: 150, Y: 325}]	, rotation : 66.75},
+					{class:"tank", id: 4, movement : [{X: 700, Y: 450},	{X: 150, Y: 450}]	, rotation : 156.75},
+					{class:"tank", id: 1, movement : [{X: 650, Y: 325},	{X: 100, Y: 325}]	, rotation : 246.75},
+					{class:"tank", id: 2, movement : [{X: 650, Y: 450},	{X: 100, Y: 450}]	, rotation : 336.75},
+					{class:"tank", id: 3, movement : [ {X: 600, Y: 525}, {X: 50, Y: 525}]	, rotation : 22.25},
+					{class:"tank", id: 4, movement : [ {X: 600, Y: 750}, {X: 50, Y: 750}]	, rotation : 112.25},
+					{class:"tank", id: 1, movement : [ {X: 550, Y: 525}, {X: 0, Y: 525}]	, rotation : 202.25},
+					{class:"tank", id: 2, movement : [ {X: 550, Y: 750}, {X: 0, Y: 750}]	, rotation : 292.25}
+					]
+			}
+            ,
+			{
+				time : 13,
+				duration : 3000,
+				descriptionId : 1,
+				path : [
+					{class:"tank", id: 3, movement : [{X: 150, Y: 325},	{X: 150, Y: 0}], rotation : 156.75},
+					{class:"tank", id: 4, movement : [{X: 150, Y: 450},	{X: 150, Y: 20}],rotation : 246.75},
+					{class:"tank", id: 1, movement : [{X: 100, Y: 325},	{X: 100, Y: 0}],rotation : 336.75},
+					{class:"tank", id: 2, movement : [{X: 100, Y: 450},	{X: 100, Y: 20}], rotation : 66.75},
+					{class:"tank", id: 3, movement :[ {X: 50, Y: 525},	{X: 50, Y: 1000}], rotation : 112.25},
+					{class:"tank", id: 4, movement :[ {X: 50, Y: 750}, {X: 50, Y: 980}],rotation : 202.25},
+					{class:"tank", id: 1, movement :[ {X: 0, Y: 525}, 	{X: 0, Y: 1000}],rotation : 202.25},
+					{class:"tank", id: 2, movement :[ {X: 0, Y: 750}, 	{X: 0, Y: 980}], rotation : 22.25}
+					]
+			}
 		],
 		description : 	[
 			{
