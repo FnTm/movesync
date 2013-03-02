@@ -1,0 +1,167 @@
+div.highlight{
+	background:#AAAAFF;
+}
+
+audio {
+	width: 100%;
+
+}
+.example {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+
+.example div, .example p, .example span{
+    padding: 0;
+    margin: 0;
+}
+
+#mygraphiccontainer {
+    width: 600px;
+    height: 600px;
+}
+
+
+
+.dot {
+    position: absolute;
+    color: #396491;
+    font-size: 20px;
+    height: 0;
+    line-height: 12px;
+    opacity: 0.8;
+    width: 0;
+    cursor: move;
+}
+
+.dot .point {
+    background-color: #000;
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    font-size: 0px;
+}
+
+.number-label {
+    position: absolute;
+    top: -1em;
+    left: -0.9em;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+}
+
+/* Gives the points a larger target area to drag */
+.dot .fat-finger {
+    position: absolute;
+    top: -30px; /* minus half the fat-finger height */
+    left: -30px;
+    width: 60px;
+    height: 60px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    background-color: #abc;
+    opacity: 0.3;
+    filter: alpha (opacity = 30);
+}
+
+
+code span {
+    color: #CC3300;
+}
+
+.point {
+    font-size: 24px;
+    left: 5px;
+    position: absolute;
+    top: -5px;
+}
+
+
+.active {
+	background-color: rgba(0, 0, 0, 0.25);
+}
+
+
+#movesync-description {
+	width: 95%;
+}
+
+#movesync-description > div {
+	padding-left: 4%;
+	width: 90%;
+}
+
+.logo {
+	max-width: 20%;
+	padding: 1% 1% 3% 1%;
+}
+
+.headInfo {
+	color: #333;
+	font-family: Tahoma, Verdana, sans-serif;
+	text-align: center;
+	font-size: 2em;
+	padding: 2.5%;
+}
+
+.player {
+	padding: 1% 0 2% 0;
+}
+
+.centered {
+	text-align: center;
+}
+
+footer {
+	border-top: 1px solid grey;
+}
+
+footer > * {
+	padding-top: 1%;
+}
+
+#movesync-description  h1 {
+	font-size: 1.5em;
+}
+
+body {
+	background-color: rgba(0, 0, 0, 0.04);
+}
+
+.dancer{
+    position: absolute;
+    left: -1000px;
+    top: -1000px;
+    /*background-color: #f00;*/
+    text-align: center;
+    line-height: 1.5em;
+    /*border: solid 1px #cc0000;*/
+    /*            border-radius: 0;
+                -moz-box-shadow: 3px 3px 7px rgba(0,0,0,0.4);
+                -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.4);*/
+    width: 20px;
+    height: 20px;
+    background-size:cover;
+}
+.boy{
+    background-image: url("../assets/u.png");
+
+}
+.girl{
+    background-image: url("../assets/v.png");
+
+}
+
+
+.songName {
+ font-size: 1.9em;
+ padding-left: 4%;
+}
