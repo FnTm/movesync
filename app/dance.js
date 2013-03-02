@@ -20,7 +20,7 @@ var danceVar = {
 					]
 			},
 			{
-				time : 5,
+				time : 4,
 				duration : 1500,
 				descriptionId : 1,
 				path : [
@@ -35,7 +35,7 @@ var danceVar = {
 					]
 			},
 			{
-				time : 10,
+				time : 5,
 				duration : 400,
 				descriptionId : 0,
 				path : [

@@ -119,12 +119,13 @@ function Mover(graphicContainerId, canvasId, isReadyCallback) {
 			rotate : '360'
 		});
 		dancerObj.anim.set('from', {
-			rotate : '0',
-			duration : length/1000
+			rotate : '0'
 		});
 
 		dancerObj.anim.on("end",function(){
 		});
+        length=length-100;
+        dancerObj.anim.set("duration", (length/1000));
 
 		dancerObj.anim.run();
 	}
