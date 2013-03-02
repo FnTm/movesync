@@ -113,18 +113,21 @@ function Mover(graphicContainerId, canvasId, isReadyCallback) {
 			dancerObj.Y = otherPoints[0][1];
 		}
 
+		dancerObj.anim.stop();
+
 
 		dancerObj.anim.set('to', {
 			curve: otherPoints,
-			rotate : '360'
+			rotate : '0'
 		});
+
 		dancerObj.anim.set('from', {
 			rotate : '0'
 		});
 
 		dancerObj.anim.on("end",function(){
 		});
-        length=length-100;
+
         dancerObj.anim.set("duration", (length/1000));
 
 		dancerObj.anim.run();
