@@ -71,10 +71,3 @@ movesync.player = function() {
 		"initPlayer"			: initPlayer
 	}
 }();
-
-
-$(document).ready(function(){
-	
-	movesync.player.initPlayer([0, 5, 8, 10], function(param) {console.log("movent" + param + "start" )} );
-
-});	
