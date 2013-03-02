@@ -18,6 +18,7 @@ movesync.model = function() {
 		appendMovementsToDescrArea();
 		performFramesArray();
         console.log("sd");
+        setUpButtons();
 	};
 	
 	/*
@@ -46,6 +47,30 @@ movesync.model = function() {
 	createDancers=function(){
         initField(dance);
     }
+    setUpButtons = function () {
+        var findMe = $('#findMe');
+        var clearMe = $('#clearMe');
+
+        findMe.click(function () {
+            var findValue = $("#findMeCode").val();
+            if (findValue != "") {
+                var node = $("#" + findValue);
+                console.log(node);
+                if (node.length > 0) {
+                    console.log("found");
+                    node.addClass("findMe");
+                }
+            }
+        });
+        clearMe.click(function(){
+            console.log($(".dancer"));
+            $(".dancer").removeClass("findMe");
+            $("#findMeCode").val("");
+            console.log("clear");
+        });
+
+    }
+
 	/*
 	 * Used for filling movements array needed in player
 	 */
@@ -67,10 +92,11 @@ movesync.model = function() {
 		$("div.active").removeClass("active");
 		$("#description" + stepId).addClass("active");
 	};
-	
-	/*
-	 * Stub. Will be replaced on drawing call.
-	 */
+
+
+    /*
+     * Stub. Will be replaced on drawing call.
+     */
 	drawAnimationStub = function(mvmnt) {
 		console.log("Came soon. For now, imagine, that figures are moving.");
 		console.log(mvmnt);
