@@ -55,7 +55,8 @@ function Mover(graphicContainerId, canvasId, isReadyCallback) {
 			Y : -1,
 			obj : null,
 			anim : null,
-			type : type
+			type : type,
+			angle : 0
 		});
 		var tmpObj = $("<div class='demo " + type + "' id='dancer-" + order + "' style='left:-500px; top:-500px;'>&nbsp;</div>");
 
@@ -84,47 +85,44 @@ function Mover(graphicContainerId, canvasId, isReadyCallback) {
 	}
 
 	var doFrame = function(frame) {
-		var duration = frame.duration;
 		var path = frame.path;
 
 		for (var i = 0; i < path.length; i++) {
-			var aa = []//[[dancerIds[i].X, dancerIds[i].Y]];
+			var pointPath = []
 			for (var j = 0; j < path[i].movement.length; j++) {
 				var newX = path[i].movement[j].X / 1000 * width + topLeft[0];
 				var newY = path[i].movement[j].Y / 1000 * height + topLeft[1];
-				aa.push([newX, newY]);
+				pointPath.push([newX, newY]);
 			}
-;			doAnimationOnDancer(dancerIds[i], time = 0 ? [10,10] : null, aa, duration);
+			console.log(path[i].angle);
+;			doAnimationOnDancer(dancerIds[i], pointPath, frame.duration, path[i].angle);
 		}
 	}
 	this.doFrame = doFrame;
 
-	var doAnimationOnDancer = function(dancerObj, stylePoint, otherPoints, length) {
-
-		// Reset the animated element to the start position.
-		// This is needed for running the animation multiple times
-		/*
-		if (stylePoint)
-			dancerObj.obj.setStyles({'left':stylePoint[0], 'top':stylePoint[1]});;
-		*/
+	var doAnimationOnDancer = function(dancerObj, otherPoints, length, angle) {
 		if (dancerObj.X < 0) {
 			dancerObj.obj.setStyles({'left':otherPoints[0][0] - topLeft[0], 'top':otherPoints[0][1] - topLeft[1]});
 			dancerObj.X = otherPoints[0][0];
 			dancerObj.Y = otherPoints[0][1];
+			dancerObj.angle = angle;
 		}
 
+		dancerObj.anim.stop();
 
 		dancerObj.anim.set('to', {
 			curve: otherPoints,
-			rotate : '360'
+			rotate : angle - dancerObj.angle >= 180 ? angle - 360 : angle
 		});
+
 		dancerObj.anim.set('from', {
-			rotate : '0'
+			rotate : dancerObj.angle - angle >= 180 ? dancerObj.angle - 360 : dancerObj.angle
 		});
 
 		dancerObj.anim.on("end",function(){
+			dancerObj.angle = angle;
 		});
-        length=length-100;
+
         dancerObj.anim.set("duration", (length/1000));
 
 		dancerObj.anim.run();

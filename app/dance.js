@@ -4,64 +4,111 @@ var danceVar = {
 			{class : "boy", id : 1}, {class : "boy", id : 2}, {class : "boy", id : 3}, {class : "boy", id : 4},
 			{class : "girl", id : 1}, {class : "girl", id : 2}, {class : "girl", id : 3}, {class : "girl", id : 4}],
 		frames : [
-			{
+			{	//Standing still till 3.5s
 				time : 0,
 				duration : 4000,
 				descriptionId : 0,
 				path : [
-					{class:"boy", id: 1, movement : [{X: 875, Y: 625}, {X: 875, Y: 625}], rotation : 66.75},
-					{class:"boy", id: 2, movement : [{X: 625, Y: 125}, {X: 625, Y: 125}], rotation : 156.75},
-					{class:"boy", id: 3, movement : [{X: 125, Y: 375}, {X: 125, Y: 375}], rotation : 246.75},
-					{class:"boy", id: 4, movement : [{X: 375, Y: 875}, {X: 375, Y: 875}], rotation : 336.75},
-					{class:"girl", id: 1, movement : [{X: 625, Y: 875}, {X: 625, Y: 875}], rotation : 22.25},
-					{class:"girl", id: 2, movement : [{X: 875, Y: 375}, {X: 875, Y: 375}], rotation : 112.25},
-					{class:"girl", id: 3, movement : [{X: 375, Y: 125}, {X: 375, Y: 125}], rotation : 202.25},
-					{class:"girl", id: 4, movement : [{X: 125, Y: 625}, {X: 125, Y: 625}], rotation : 292.25}
+					{class:"boy", id: 1, movement : [{X: 875, Y: 625}, {X: 875, Y: 625}], angle : 22.25},
+					{class:"boy", id: 2, movement : [{X: 625, Y: 125}, {X: 625, Y: 125}], angle : 292.25},
+					{class:"boy", id: 3, movement : [{X: 125, Y: 375}, {X: 125, Y: 375}], angle : 202.25},
+					{class:"boy", id: 4, movement : [{X: 375, Y: 875}, {X: 375, Y: 875}], angle : 112.25},
+					{class:"girl", id: 1, movement : [{X: 625, Y: 875}, {X: 625, Y: 875}], angle : 66.75},
+					{class:"girl", id: 2, movement : [{X: 875, Y: 375}, {X: 875, Y: 375}], angle : 336.75},
+					{class:"girl", id: 3, movement : [{X: 375, Y: 125}, {X: 375, Y: 125}], angle : 246.75},
+					{class:"girl", id: 4, movement : [{X: 125, Y: 625}, {X: 125, Y: 625}], angle : 156.75}
 					]
 			},
-			{
-				time : 4,
-				duration : 1500,
+			{	//3 polkas, 90 degrees in 3s
+				time : 3,
+				duration : 3000,
 				descriptionId : 1,
 				path : [
-					{class:"boy", id: 1, movement : [{X: 750, Y: 1000}, {X: 375, Y: 875}], rotation : 336.75},
-					{class:"boy", id: 2, movement : [{X: 1000, Y: 250}, {X: 875, Y: 625}], rotation : 66.75},
-					{class:"boy", id: 3, movement : [{X: 250, Y: 0}, {X: 625, Y: 125}], rotation : 156.75},
-					{class:"boy", id: 4, movement : [{X: 0, Y: 750}, {X: 125, Y: 375}], rotation : 246.75},
-					{class:"girl", id: 1, movement : [{X: 250, Y: 1000}, {X: 125, Y: 625}], rotation : 292.25},
-					{class:"girl", id: 2, movement : [{X: 1000, Y: 750}, {X: 625, Y: 875}], rotation : 22.25},
-					{class:"girl", id: 3, movement : [{X: 750, Y: 0}, {X: 875, Y: 375}], rotation : 112.25},
-					{class:"girl", id: 4, movement : [{X: 0, Y: 250}, {X: 375, Y: 125}], rotation : 202.25}
+					{class:"boy", id: 1, movement : [{X: 750, Y: 1000}, {X: 375, Y: 875}], angle : 112.25},
+					{class:"boy", id: 2, movement : [{X: 1000, Y: 250}, {X: 875, Y: 625}], angle : 22.25},
+					{class:"boy", id: 3, movement : [{X: 250, Y: 0}, {X: 625, Y: 125}], angle : 292.25},
+					{class:"boy", id: 4, movement : [{X: 0, Y: 750}, {X: 125, Y: 375}], angle : 202.25},
+					{class:"girl", id: 1, movement : [{X: 250, Y: 1000}, {X: 125, Y: 625}], angle : 156.75},
+					{class:"girl", id: 2, movement : [{X: 1000, Y: 750}, {X: 625, Y: 875}], angle : 66.75},
+					{class:"girl", id: 3, movement : [{X: 750, Y: 0}, {X: 875, Y: 375}], angle : 336.75},
+					{class:"girl", id: 4, movement : [{X: 0, Y: 250}, {X: 375, Y: 125}], angle : 246.75}
 					]
 			},
-			{
-				time : 5,
-				duration : 400,
+			{	//3 polkas, 90 more degrees in 3s
+				time : 6,
+				duration : 3000,
 				descriptionId : 0,
 				path : [
-					{class:"boy", id: 1, movement : [{X: 0, Y: 750}, {X: 125, Y: 375}], rotation : 246.75},
-					{class:"boy", id: 2, movement : [{X: 750, Y: 1000}, {X: 375, Y: 875}], rotation : 336.75},
-					{class:"boy", id: 3, movement : [{X: 1000, Y: 250}, {X: 875, Y: 625}], rotation : 66.75},
-					{class:"boy", id: 4, movement : [{X: 250, Y: 0}, {X: 625, Y: 125}], rotation : 156.75},
-					{class:"girl", id: 1, movement : [{X: 0, Y: 250}, {X: 375, Y: 125}], rotation : 202.25},
-					{class:"girl", id: 2, movement : [{X: 250, Y: 1000}, {X: 125, Y: 625}], rotation : 292.25},
-					{class:"girl", id: 3, movement : [{X: 1000, Y: 750}, {X: 625, Y: 875}], rotation : 22.25},
-					{class:"girl", id: 4, movement : [{X: 750, Y: 0}, {X: 875, Y: 375}], rotation : 112.25}
+					{class:"boy", id: 1, movement : [{X: 0, Y: 750}, {X: 125, Y: 375}], angle : 202.25},
+					{class:"boy", id: 2, movement : [{X: 750, Y: 1000}, {X: 375, Y: 875}], angle : 112.25},
+					{class:"boy", id: 3, movement : [{X: 1000, Y: 250}, {X: 875, Y: 625}], angle : 22.25},
+					{class:"boy", id: 4, movement : [{X: 250, Y: 0}, {X: 625, Y: 125}], angle : 292.25},
+					{class:"girl", id: 1, movement : [{X: 0, Y: 250}, {X: 375, Y: 125}], angle : 246.75},
+					{class:"girl", id: 2, movement : [{X: 250, Y: 1000}, {X: 125, Y: 625}], angle : 156.75},
+					{class:"girl", id: 3, movement : [{X: 1000, Y: 750}, {X: 625, Y: 875}], angle : 66.75},
+					{class:"girl", id: 4, movement : [{X: 750, Y: 0}, {X: 875, Y: 375}], angle : 336.75}
 					]
-			}/*,
+			},
+			{	//Standing still for 3 claps , 2s
+				time : 9,
+				duration : 500,
+				descriptionId : 0,
+				path : [
+					{class:"boy", id: 1, movement : [{X: 125, Y: 375}, {X: 125, Y: 375}], angle : 122.25},
+					{class:"boy", id: 2, movement : [{X: 375, Y: 875}, {X: 375, Y: 875}], angle : 22.25},
+					{class:"boy", id: 3, movement : [{X: 875, Y: 625}, {X: 875, Y: 625}], angle : 292.25},
+					{class:"boy", id: 4, movement : [{X: 625, Y: 125}, {X: 625, Y: 125}], angle : 292.25},
+					{class:"girl", id: 1, movement : [{X: 375, Y: 125}, {X: 375, Y: 125}], angle : 156.75},
+					{class:"girl", id: 2, movement : [{X: 125, Y: 625}, {X: 125, Y: 625}], angle : 66.75},
+					{class:"girl", id: 3, movement : [{X: 625, Y: 875}, {X: 625, Y: 875}], angle : 336.75},
+					{class:"girl", id: 4, movement : [{X: 875, Y: 375}, {X: 875, Y: 375}], angle : 246.75}
+					]
+			},
+			{	//3 polkas, 90 degrees back in 3s
+				time : 11,
+				duration : 3000,
+				descriptionId : 0,
+				path : [
+					{class:"boy", id: 1, movement : [{X: 0, Y: 750}, {X: 375, Y: 875}], angle : 246.75},
+					{class:"boy", id: 2, movement : [{X: 750, Y: 1000}, {X: 875, Y: 625}], angle : 336.75},
+					{class:"boy", id: 3, movement : [{X: 1000, Y: 250}, {X: 625, Y: 125}], angle : 66.75},
+					{class:"boy", id: 4, movement : [{X: 250, Y: 0}, {X: 125, Y: 375}], angle : 156.75},
+					{class:"girl", id: 1, movement : [{X: 0, Y: 250}, {X: 125, Y: 625}], angle : 202.25},
+					{class:"girl", id: 2, movement : [{X: 250, Y: 1000}, {X: 625, Y: 875}], angle : 292.25},
+					{class:"girl", id: 3, movement : [{X: 1000, Y: 750}, {X: 875, Y: 375}], angle : 22.25},
+					{class:"girl", id: 4, movement : [{X: 750, Y: 0}, {X: 375, Y: 125}], angle : 112.25}
+					]
+			},
+			{	//3 polkas, 90 degrees in 3s
+				time : 14,
+				duration : 3000,
+				descriptionId : 1,
+				path : [
+					{class:"boy", id: 1, movement : [{X: 750, Y: 1000}, {X: 875, Y: 625}], angle : 336.75},
+					{class:"boy", id: 2, movement : [{X: 1000, Y: 250}, {X: 625, Y: 125}], angle : 66.75},
+					{class:"boy", id: 3, movement : [{X: 250, Y: 0}, {X: 125, Y: 375}], angle : 156.75},
+					{class:"boy", id: 4, movement : [{X: 0, Y: 750}, {X: 375, Y: 875}], angle : 246.75},
+					{class:"girl", id: 1, movement : [{X: 250, Y: 1000}, {X: 625, Y: 875}], angle : 292.25},
+					{class:"girl", id: 2, movement : [{X: 1000, Y: 750}, {X: 875, Y: 375}], angle : 22.25},
+					{class:"girl", id: 3, movement : [{X: 750, Y: 0}, {X: 375, Y: 125}], angle : 112.25},
+					{class:"girl", id: 4, movement : [{X: 0, Y: 250}, {X: 125, Y: 625}], angle : 202.25}
+					]
+			},
+
+			/*,
 			{
 				time : 15,
 				duration : 500,
 				descriptionId : 1,
 				path : [
-					{class:"boy", id: 1, movement : [{X: 0, Y: 750}, {X: 125, Y: 625}], rotation : 336.75},
-					{class:"boy", id: 2, movement : [{X: 750, Y: 1000}, {X: 375, Y: 875}], rotation : 66.75},
-					{class:"boy", id: 3, movement : [{X: 1000, Y: 250}, {X: 875, Y: 625}], rotation : 156.75},
-					{class:"boy", id: 4, movement : [{X: 250, Y: 0}, {X: 625, Y: 125}], rotation : 246.75},
-					{class:"girl", id: 1, movement : [{X: 0, Y: 250}, {X: 375, Y: 125}], rotation : 202.25},
-					{class:"girl", id: 2, movement : [{X: 250, Y: 100}, {X: 125, Y: 625}], rotation : 22.25},
-					{class:"girl", id: 3, movement : [{X: 1000, Y: 750}, {X: 625, Y: 875}], rotation : 112.25},
-					{class:"girl", id: 4, movement : [{X: 750, Y: 0}, {X: 875, Y: 375}], rotation : 202.25}
+					{class:"boy", id: 1, movement : [{X: 0, Y: 750}, {X: 125, Y: 625}], angle : 336.75},
+					{class:"boy", id: 2, movement : [{X: 750, Y: 1000}, {X: 375, Y: 875}], angle : 66.75},
+					{class:"boy", id: 3, movement : [{X: 1000, Y: 250}, {X: 875, Y: 625}], angle : 156.75},
+					{class:"boy", id: 4, movement : [{X: 250, Y: 0}, {X: 625, Y: 125}], angle : 246.75},
+					{class:"girl", id: 1, movement : [{X: 0, Y: 250}, {X: 375, Y: 125}], angle : 202.25},
+					{class:"girl", id: 2, movement : [{X: 250, Y: 100}, {X: 125, Y: 625}], angle : 22.25},
+					{class:"girl", id: 3, movement : [{X: 1000, Y: 750}, {X: 625, Y: 875}], angle : 112.25},
+					{class:"girl", id: 4, movement : [{X: 750, Y: 0}, {X: 875, Y: 375}], angle : 202.25}
 					]
 			}*/
 		],

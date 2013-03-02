@@ -25,7 +25,6 @@ audio {
 }
 
 .example .demo {
-    background-image: url("../assets/u.png");
     position: absolute;
     left: 92px;
     top: 103px;
