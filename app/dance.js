@@ -6,7 +6,7 @@ var danceVar = {
 		frames : [
 			{
 				time : 0,
-				duration : 0000,
+				duration : 1000,
 				descriptionId : 0,
 				path : [
 					{class:"boy", id: 1, movement : [{X: 875, Y: 625}], rotation : 66.75}, {class:"boy", id: 2, movement : [{X: 625, Y: 125}], rotation : 156.75},
