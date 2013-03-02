@@ -5,7 +5,37 @@
  * Time: 03:37
  * To change this template use File | Settings | File Templates.
  */
-YUI().use('anim', 'dd-drag', 'graphics', 'cssbutton', function(Y){
+YUI.add( 'anim-rotate', function (Y) {
+    Y.Anim.behaviors.rotate = {
+
+        // this function changes the style of the node/element
+        set: function(anim, att, from, to, elapsed, duration, fn) {
+
+            // get the actual degrees to rotate the element
+            var v = fn(elapsed, Number(from),  Number(to) - Number(from), duration);
+
+            // now set the styling
+            anim._node.setStyle( 'transform', 'rotate(' + v + 'deg)' );
+            anim._node.setStyle( 'webkitTransform', 'rotate(' + v + 'deg)' );
+            anim._node.setStyle( 'MozTransform', 'rotate(' + v + 'deg)' ); // FF 3.1+ only :(
+
+            // IE stuff; doesn't work as intended :P
+            var deg2radians = Math.PI / 180;
+            var rad = v * deg2radians ;
+            var costheta = Math.cos(rad);
+            var sintheta = Math.sin(rad);
+
+            var m11 = costheta;
+            var m12 = -sintheta;
+            var m21 = sintheta;
+            var m22 = costheta;
+
+            var str = "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand' M11="+m11+" M12="+m12+" M21="+m21+" M22="+m22+")";
+            anim._node.setStyle( 'filter', str );
+        }
+    };
+}, '0.0.1', { requires: ['anim'] });
+YUI().use('anim', 'dd-drag', 'graphics', 'cssbutton','anim-rotate', function(Y){
 //debugger;
 
     var mygraphic = new Y.Graphic({render:"#mygraphiccontainer"}),
@@ -108,7 +138,7 @@ YUI().use('anim', 'dd-drag', 'graphics', 'cssbutton', function(Y){
     var anim2 = new Y.Anim({
         node: demoA,
         duration: 2.5
-//        ,easing: Y.Easing.easeNone
+        ,easing: Y.Easing.easeNone
     });
     firstrun=false;
     fr2=false;
@@ -175,10 +205,18 @@ YUI().use('anim', 'dd-drag', 'graphics', 'cssbutton', function(Y){
 
         console.log(bottomRight);
         anim2.set('to', {
-            curve: [[bottomLeft[0]+10, bottomLeft[1]-(height/2) ], [topLeft[0], topLeft[1] ],[topLeft[0]+(width/2), topLeft[1]+10]]
+            curve: [[bottomLeft[0]+10, bottomLeft[1]-(height/2) ], [topLeft[0], topLeft[1] ],[topLeft[0]+(width/2), topLeft[1]+10]],
+            rotate : '360'
+        });
+        anim2.set('from', {
+            rotate : '0'
         });
         anim.set('to', {
-            curve: [[bottomLeft[0]+10, bottomLeft[1]-(height/2) ], [topLeft[0]+2*offset, topLeft[1]+offset ],[topLeft[0]+(width/2), topLeft[1]+10+offset]]
+            curve: [[bottomLeft[0]+10+offset, bottomLeft[1]-(height/2) ], [topLeft[0]+offset, topLeft[1]+offset ],[topLeft[0]+(width/2), topLeft[1]+10+offset]]
+       ,rotate : '360'
+        });
+        anim.set('from', {
+            rotate : '0'
         });
 
 
