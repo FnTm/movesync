@@ -1,42 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>moveSync</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="css/app.css" rel="stylesheet" media="screen">
-</head>
-<body>
-	<div class="container-fluid">
-		<div class="hero-unit">
-			<h1>moveSync</h1>
-		</div>
-	</div>
-	<div class="container-fluid">
-			<audio controls> 
-			  <source src="app/assets/sudmalinas.mp3"> 
-			</audio>
-	</div>
-	<div class="container-fluid">
-
-		<div class="row-fluid">
-			<div class="span3">
-				<div id="movesync-description" style="overflow:scroll; height:400px;">
-					
-				</div>
-			</div>
-			<div class="span9">
-				<div class="hero-unit">
-					<p>Cool moveSync project incoming here!</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script src="js/jquery-1.9.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-	<script type="text/javascript">
-		var descOfDance = {
+{
 			stageSize : {width:1000, height:1000},
 			dancers : 	[{class : "boy", id : 1}, {class : "boy", id : 2}, {class : "girl", id : 1}, {class : "girl", id : 2}],
 			frames : [
@@ -89,18 +51,3 @@
 				}
 			]
 		}
-
-		var dance;
-		$(document).ready(function(){
-			dance = new Dance(descOfDance);
-		})
-	</script>
-
-    <script src="js/movesync/DescriptionBar.js"></script>
-    <script src="js/movesync/Dancer.js"></script>
-    <script src="js/movesync/Stage.js"></script>
-    <script src="js/movesync/Dance.js"></script>
-    <script src="app/scripts/player.js"></script>
-
-</body>
-</html>
