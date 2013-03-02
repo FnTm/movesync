@@ -98,4 +98,6 @@ $(document).ready(function(){
 	movesync.model.loadDance("app/dance.json");
 	
 	movesync.player.initPlayer(movesync.model.getMovementsStartPoints(), movesync.model.fireEvent );
+	
+	$("a.youtube").YouTubePopup({ hideTitleBar: true });
 });	
