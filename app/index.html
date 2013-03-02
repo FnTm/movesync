@@ -24,36 +24,57 @@
 
     </head>
 	<body>
+    
     <div class="container-fluid">
-        <div class="hero-unit">
-            <h1>moveSync</h1>
-        </div>
+     <div class="row-fluid">
+	     <div class="logo span3">
+	     	<img src="assets/logo.png"/>
+	     </div>
+	     <div class="headInfo span9">
+	     	<audio controls>
+            	<source src="assets/sudmalinas.mp3">
+        	</audio>
+	     </div>
+     </div>
     </div>
-    <div class="container-fluid">
-        <audio controls>
-            <source src="assets/sudmalinas.mp3">
-        </audio>
-    </div>
+   
     <div class="container-fluid">
 
         <div class="row-fluid">
-            <div class="span3">
-                <div id="movesync-description" style="overflow:scroll; height:400px;">
+            <div class="span4">
+            
+                <div id="movesync-description" style="overflow:scroll; height:600px;">
+            	<div class="row-fluid songName"> SongName </div>	
 
                 </div>
             </div>
-            <div class="span9">
-                <div class="hero-unit">
-                    <div id="info">
-                        <button id="btn-animate" class='yui3-button'>Please, just MoveSync.us</button>
-                    </div>
-                    <div class="example">
-                        <div id="mygraphiccontainer"></div> <!-- Container for the preview of the curve line -->
-                    </div>
-                </div>
-            </div>
+            <div class="span8">
+                 <div id="info">
+                     <button id="btn-animate" class='yui3-button'>Please, just MoveSync.us</button>
+                 </div>
+                 <div class="example">
+
+                     <div id="mygraphiccontainer"></div> <!-- Container for the preview of the curve line -->
+                     <div id="demo" class="dancer boy">&nbsp;</div>
+                     <div id="demo2" class="dancer girl">&nbsp;</div>
+
+                 </div>
         </div>
     </div>
+    
+    <footer class="container-fluid">
+   	 <div class="row-fluid">
+       <div class="span12 centered">
+       <div id="garage48">
+       	<a href="http://garage48.org/minsk" title="Garage48.org">
+       		<img src="../img/garage48.gif" width="114px">
+       	</a>
+		<p><small>movesync.us is the most amazing project of Garage48 hackathon in Minsk</small></p>
+		</div>
+	</div>
+     </div>
+    </footer>
+    
     <script src="js/jquery-1.9.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
@@ -125,9 +146,16 @@
     <script src="js/movesync/Stage.js"></script>
     <script src="js/movesync/Dance.js"></script>
     <script src="scripts/player.js"></script>
+    <script src="scripts/model.js"></script>
+    <script src="dance.js"></script>
+        <script src="dance.js"></script>
 
-    <!-- In order for the script to run, this HTML markup must be nested in a
--->
+        <script src="scripts/model.js"></script>
+        <script src="scripts/move.js" type="text/javascript"></script>
+
+
+        <!-- In order for the script to run, this HTML markup must be nested in a
+    -->
 
 
 	</body>

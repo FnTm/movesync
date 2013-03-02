@@ -17,6 +17,7 @@ movesync.model = function() {
 		dance = danceVar;
 		appendMovementsToDescrArea();
 		performFramesArray();
+        console.log("sd");
 	};
 	
 	/*
@@ -40,8 +41,11 @@ movesync.model = function() {
 			mainPlaceholder.append(descrElem);
 			
 		}
+        createDancers();
 	};
-	
+	createDancers=function(){
+        initField(dance);
+    }
 	/*
 	 * Used for filling movements array needed in player
 	 */
@@ -70,6 +74,7 @@ movesync.model = function() {
 	drawAnimationStub = function(mvmnt) {
 		console.log("Came soon. For now, imagine, that figures are moving.");
 		console.log(mvmnt);
+        moveFrame(mvmnt);
 	}
 	
 	/*

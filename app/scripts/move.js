@@ -35,10 +35,75 @@ YUI.add( 'anim-rotate', function (Y) {
         }
     };
 }, '0.0.1', { requires: ['anim'] });
+dance=null;
+initField=function(vdance){
+    var mainPlaceholder = $(".example");
+dance=vdance;
+    for(var i=0;i<dance.dancers.length;i++){
+        var descrElem = "<div id='dancer" + i +"' class='"+dance.dancers[i].class+" dancer'>" + i + "</div>";
+        mainPlaceholder.append(descrElem);
+    }
+
+};
+animations=[];
+width=null;
+height=null;
+topLeft=null;
+topRight=null;
+bottomLeft=null;
+bottomRight=null;
+globalY=null;
+dancers=[];
+moveFrame=function(movement){
+    Y=globalY;
+
+    console.log("movement");
+
+    var startAnim2 = function(movement){
+
+        offset=30;
+            for(var i=0;i<dance.dancers.length;i++){
+                animations[i] = new Y.Anim({
+                    node: dancers[i],
+                    duration: movement.duration/1000,
+                    easing: Y.Easing.easeNone
+                });
+              //  movement.path[i].movement.x;
+                dancers[i].setStyles({'left':10+(i*offset), 'top':height/2});
+
+                animations[i].set('to', {
+                    curve: [[bottomLeft[0]+10+(i*offset), bottomLeft[1]-(height/2) ], [topLeft[0]+(i*offset), topLeft[1]+(i*offset) ],[topLeft[0]+(width/2), topLeft[1]+10+(i*offset)],[topLeft[0]+(width/2), topLeft[1]+10+(i*offset)]],
+                    rotate : '360'
+                });
+                animations[i].set('from', {
+                    rotate : '0'
+                });
+
+
+            }
+
+
+
+
+        for(var i=0;i<dance.dancers.length;i++){
+            animations[i].run();
+        }
+
+    };
+    startAnim2(movement);
+};
+
+
 YUI().use('anim', 'dd-drag', 'graphics', 'cssbutton','anim-rotate', function(Y){
 //debugger;
+globalY=Y;
+        for(var i=0;i<dance.dancers.length;i++){
+            dancers[i] = Y.one("#dancer"+i);
 
-    var mygraphic = new Y.Graphic({render:"#mygraphiccontainer"}),
+        }
+console.log(animations);
+
+ var   mygraphic = new Y.Graphic({render:"#mygraphiccontainer"}),
 
         origin = Y.one('.example'), // The XY values for the animation are based on the upper-left corner of this element
         demoA = Y.one('#demo'), // The animated element
@@ -67,35 +132,6 @@ YUI().use('anim', 'dd-drag', 'graphics', 'cssbutton','anim-rotate', function(Y){
     console.log(bottomLeft);
 
     console.log(bottomRight);
-
-
-
-
-    // Draggable points
-    /*dot0 = Y.one('#dot-0'), dot1 = Y.one('#dot-1'),  dot3 = Y.one('#dot-3'),
-
-        // Array of XY arrays of draggable points
-       ,
-
-        // Make points draggable
-        dd0 = new Y.DD.Drag({
-            node: '#dot-0'
-        }),
-        dd1 = new Y.DD.Drag({
-            node: '#dot-1'
-        }),
-        dd3 = new Y.DD.Drag({
-            node: '#dot-3'
-        });
-
-    // Puts current XY values of points into displayed code snippet
-    var updateCodeSnippetValues = function(){
-        Y.one('.arr0').setHTML(arrDot[0][0] + ',' + arrDot[0][1]); // Start
-        Y.one('.arr1').setHTML(arrDot[1][0] + ',' + arrDot[1][1]); // Control point 1
-        // Control point 2
-        Y.one('.arr3').setHTML(arrDot[2][0] + ',' + arrDot[2][1]); // End
-    }*/
-
     /**
      * Stops the animation
      * Updates the array of point XY values
