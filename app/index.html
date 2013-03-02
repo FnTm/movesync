@@ -1,98 +1,170 @@
 <!DOCTYPE html>
 <html>
-
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Movesync.us</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="css/app.css" rel="stylesheet" media="screen">
-		<script src="scripts/jquery.min.js" type="text/javascript"></script>
-		<script src="scripts/ocanvas-2.4.0.min.js" type="text/javascript"></script>
-		<link rel="stylesheet/less" type="text/css" href="style/movesync.less">
-		<script src="scripts/less-1.3.3.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="js/jwplayer.js" ></script>
-<!--
-        <script>var YUI_config={"filter":"min","maxURLLength":1024,"root":"3.8.1/","groups":{"site":{"combine":true,"comboBase":"/combo/js?","root":"","modules":{"hoverable":{"path":"hoverable-min.js","requires":["event-hover","node-base","node-event-delegate"]},"search":{"path":"search-min.js","requires":["autocomplete","autocomplete-highlighters","node-pluginhost"]},"api-filter":{"path":"apidocs/api-filter-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources"]},"api-list":{"path":"apidocs/api-list-min.js","requires":["api-filter","api-search","event-key","node-focusmanager","tabview"]},"api-search":{"path":"apidocs/api-search-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources","escape"]}}}}};</script>
--->
-		<script src="scripts/movesync.js" type="text/javascript"></script>
-        <script src="scripts/yui-min.js" type="text/javascript"></script>
-        <script src="scripts/yui/build/event/event-min.js" type="text/javascript"></script>
-        <script src="scripts/yui/build/animation/animation-min.js" type="text/javascript"></script>
-        <script src="scripts/yui/build/utilities/utilities.js" type="text/javascript"></script>
-
-
-
-
-
-    </head>
-	<body>
-    
-    <div class="container-fluid">
-     <div class="row-fluid">
-	     <div class="logo span3">
-	     	<img src="assets/logo.png"/>
-	     </div>
-	     <div class="headInfo span9">
-	     	<audio controls>
-            	<source src="assets/sudmalinas.mp3">
-        	</audio>
-	     </div>
-     </div>
-    </div>
-   
-    <div class="container-fluid">
-
-        <div class="row-fluid">
-            <div class="span4">
-            
-                <div id="movesync-description" style="overflow:scroll; height:600px;">
-            	<div class="row-fluid songName"> SongName </div>	
-
-                </div>
-            </div>
-            <div class="span8">
-                 <div id="info">
-                     <button id="btn-animate" class='yui3-button'>Please, just MoveSync.us</button>
-                 </div>
-                 <div class="example">
-
-                     <div id="mygraphiccontainer"></div> <!-- Container for the preview of the curve line -->
-                     <div id="demo" class="dancer boy">&nbsp;</div>
-                     <div id="demo2" class="dancer girl">&nbsp;</div>
-
-                 </div>
-        </div>
-    </div>
-    
-    <footer class="container-fluid">
-   	 <div class="row-fluid">
-       <div class="span12 centered">
-       <div id="garage48">
-       	<a href="http://garage48.org/minsk" title="Garage48.org">
-       		<img src="../img/garage48.gif" width="114px">
-       	</a>
-		<p><small>movesync.us is the most amazing project of Garage48 hackathon in Minsk</small></p>
-		</div>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Movesync.us</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="css/app.css" rel="stylesheet" media="screen">
+  		<script src="scripts/jquery.min.js" type="text/javascript"></script>
+  		 <style>
+   body {
+    background: yellow;
+   }
+  </style>
+	</head>
+ <body>
+	
+	<div class="container-fluid">
+	 <div class="row-fluid">
+	  <div class="logo span3">
+	   <img src="assets/logo.png"/>
+	  </div>
+	  <div class="headInfo span9">
+	   <audio controls>
+			 <source src="assets/sudmalinas.mp3">
+		 </audio>
+	  </div>
+	 </div>
 	</div>
-     </div>
-    </footer>
-    
-    <script src="js/jquery-1.9.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+   
+	<div class="container-fluid">
 
-    <script src="scripts/player.js"></script>
-    <script src="scripts/model.js"></script>
-    <script src="dance.js"></script>
-        <script src="dance.js"></script>
+		<div class="row-fluid">
+			<div class="span4">
+			
+				<div id="movesync-description" style="overflow:scroll; height:600px;">
+			 <div class="row-fluid songName"> Sudmaliņas </div> 
 
-        <script src="scripts/model.js"></script>
-        <script src="scripts/move.js" type="text/javascript"></script>
+				</div>
+			</div>
+			<div class="span8">
+				 <div class="example">
+
+					 <div id="mygraphiccontainer"></div> <!-- Container for the preview of the curve line -->
+					 <div id="demo" class="dancer boy">&nbsp;</div>
+					 <div id="demo2" class="dancer girl">&nbsp;</div>
+
+				 </div>
+			 </div>
+		</div>
+		<a class="youtube" rel="4eYSpIz2FjU" href="#">Click me</a>
+	</div>
+	
+	<footer class="container-fluid">
+	 <div class="row-fluid">
+	   <div class="span12 centered">
+	   <div id="garage48">
+		<a href="http://garage48.org/minsk" title="Garage48.org">
+		 <img src="../img/garage48.gif" width="114px">
+		</a>
+  <p><small>movesync.us is the most amazing project of Garage48 hackathon in Minsk</small></p>
+  </div>
+ </div>
+	 </div>
+	</footer>
+  <script src="scripts/movesync.js" type="text/javascript"></script>
+		<script src="scripts/yui-min.js" type="text/javascript"></script>
+		<script src="scripts/yui/build/event/event-min.js" type="text/javascript"></script>
+		<script src="scripts/yui/build/animation/animation-min.js" type="text/javascript"></script>
+		<script src="scripts/yui/build/utilities/utilities.js" type="text/javascript"></script>
+	
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<script src="scripts/player.js"></script>
+	<script src="scripts/model.js"></script>
+	<script src="weheartgarage.js"></script>
+
+	<script src="scripts/model.js"></script>
+	<!--<script src="scripts/move.js" type="text/javascript"></script>-->
+	<script src="scripts/move2.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		var mover;
+		$(document).ready(function(){
+			//Empty at the begining
+
+			//danceVar
+			var dance = danceVar;
+
+			getFramesArray = function() {
+				var movementsArray = [];
+
+				for (var i = 0; i < dance.frames.length; i++) {
+					movementsArray.push(dance.frames[i].time);
+				}
+
+				return movementsArray;
+			};
+
+			highlighStep = function(param) {
+				var stepId = dance.frames[param].descriptionId;
+				$("div.active").removeClass("active");
+				$("#description" + stepId).addClass("active");
+			};
+
+			fireEvent = function(param) {
+				highlighStep(param);
+				var movement = dance.frames[param];
+
+				console.log(movement);
+				mover.doFrame(movement);
+			};
+
+			appendMovementsToDescrArea = function() {
+				var mainPlaceholder = $("#movesync-description");
+				var index = 0;
+
+				for (var i = 0; i < dance.description.length; i++) {
+					var descrElem = "<div id='description" + i +"'>" + "<h1>" + dance.description[i].name + "</h1>";
+					for (var j = 0; j < dance.description[i].instructions.length; j++) {
+						var instructionVO = {};
+						instructionVO.text = dance.description[i].instructions[j].text;
+						instructionVO.from = dance.description[i].instructions[j].from;
+						instructionVO.to = dance.description[i].instructions[j].to;
+						descrElem = descrElem + "<div id='instruction" + index +"'>" + instructionVO.from + " - " + instructionVO.to + ". " + instructionVO.text + "</div>";
+						index +=1;
+					}
+					descrElem = descrElem + "</div>";
+					mainPlaceholder.append(descrElem);
+					
+				}
+			};
+
+			prepareStage = function() {
+				appendMovementsToDescrArea();
+		        //createDancers();
+
+		        mover.createDancers(dance.dancers);
+		        console.log("sd");
+			}
+
+			var moverReadyCallback = function() {
+				prepareStage();
+			}
+
+			mover = new Mover("mygraphiccontainer", ".example", moverReadyCallback);
+
+			movesync.player.initPlayer(getFramesArray(), fireEvent);
 
 
-        <!-- In order for the script to run, this HTML markup must be nested in a
-    -->
+			/*
+			//Sets up references to dance object and the mover, generates the startPoint array
+			movesync.model.loadDance(danceVar, mover);
+			
+			//passes the frame points and callback event to switch frames
+			movesync.player.initPlayer(movesync.model.getMovementsStartPoints(), movesync.model.fireEvent );
+
+			//1. generates dance description on the left
+			//2. 
+			movesync.model.prepareStage();
+			*/
+		}); 
+	</script>
+		<!-- In order for the script to run, this HTML markup must be nested in a
+	-->
 
 
-	</body>
+ </body>
 </html>

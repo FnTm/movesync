@@ -54,10 +54,9 @@ bottomLeft=null;
 bottomRight=null;
 globalY=null;
 dancers=[];
+init=false;
 moveFrame=function(movement){
     Y=globalY;
-
-    console.log("movement");
 
     var startAnim2 = function(movement){
 
@@ -68,8 +67,11 @@ moveFrame=function(movement){
                     duration: movement.duration/1000,
                     easing: Y.Easing.easeNone
                 });
+                if(!init){
               //  movement.path[i].movement.x;
                 dancers[i].setStyles({'left':10+(i*offset), 'top':height/2});
+                init=true;
+            }
 
                 animations[i].set('to', {
                     curve: [[bottomLeft[0]+10+(i*offset), bottomLeft[1]-(height/2) ], [topLeft[0]+(i*offset), topLeft[1]+(i*offset) ],[topLeft[0]+(width/2), topLeft[1]+10+(i*offset)],[topLeft[0]+(width/2), topLeft[1]+10+(i*offset)]],
@@ -109,12 +111,6 @@ console.log(animations);
         demoA = Y.one('#demo'), // The animated element
         demoB = Y.one('#demo2'), // The animated element
         dotList = Y.all('.dot')
-//        ,
-//        arrDot = [
-//            [parseInt(dotList.item(0).getStyle('left'), 10), parseInt(dotList.item(0).getStyle('top'), 10)],
-//            [parseInt(dotList.item(1).getStyle('left'), 10), parseInt(dotList.item(1).getStyle('top'), 10)],
-//            [parseInt(dotList.item(2).getStyle('left'), 10), parseInt(dotList.item(2).getStyle('top'), 10)]
-//        ]
         ;
     node= Y.one("#mygraphiccontainer");
 
@@ -144,22 +140,6 @@ console.log(animations);
         drawCurve();
         updateCodeSnippetValues();
     }
-
-    /*dd0.on('drag:drag', function(e){
-        dotDragHandler(this.get('dragNode'));
-    });
-    dd1.on('drag:drag', function(e){
-        dotDragHandler(this.get('dragNode'));
-    });
-    dd3.on('drag:drag', function(e){
-        dotDragHandler(this.get('dragNode'));
-    });*/
-
-    // button handler
-    Y.one('#btn-animate').on('click', function(){
-        Y.Anim.stop();
-        setTimeout(startAnim2(true,true), 500);
-    });
 
     Y.all('.dot').on('mouseup', function(e){
         setTimeout(startAnim2, 500);
@@ -233,13 +213,6 @@ console.log(animations);
         offset=30;
         demoB.setStyles({'left':10+offset, 'top':(height/2)});
 
-
-        console.log(topLeft);
-
-        console.log(topRight);
-        console.log(bottomLeft);
-
-        console.log(bottomRight);
         anim2.set('to', {
             curve: [[bottomLeft[0]+10, bottomLeft[1]-(height/2) ], [topLeft[0], topLeft[1] ],[topLeft[0]+(width/2), topLeft[1]+10]],
             rotate : '360'
@@ -270,16 +243,4 @@ console.log(animations);
             color: "#aabbcc"
         }
     });
-
-    // Draw a preview curve with the Graphics animPath shape to match the Anim curve
-//    var drawCurve = function(){
-//        animPath.clear();
-//        animPath.moveTo(arrDot[0][0],arrDot[0][1]);
-//        animPath.curveTo(arrDot[1][0],arrDot[1][1],   arrDot[2][0],arrDot[2][1]);
-//        animPath.end();
-//    }
-//
-//    drawCurve(); // Initial drawing of the preview curve
-    //updateCodeSnippetValues(); // Initial setting of code snippet XY values
-
 });
