@@ -1,6 +1,7 @@
-function Mover(graphicContainerId, canvasId) {
+function Mover(graphicContainerId, canvasId, isReadyCallback) {
 	var YUIObj;
 	var dancerIds = [];
+	this.dancerIds = dancerIds;
 	var graphicsContainer;
 
 	var width;
@@ -43,26 +44,33 @@ function Mover(graphicContainerId, canvasId) {
 				}
 			};
 		}, '0.0.1', { requires: ['anim'] });
-	
-		createDancers();
-	}
-	
-	var createDancers = function() {
-		for (var i = 0; i < 8; i++)
-		{
-			dancerIds.push( {
-				id : "#dancer-" + i,
-				X : 0,
-				Y : 0,
-				obj : null,
-				anim : null
-			});
-			var tmpObj = $("<div class='demo' id='dancer-" + i + "' style='left:-500px; top:-500px;'>&nbsp;</div>");
 
-			var aa = $(canvasId);
-			aa.append(tmpObj);
-		}
+		YUI().use('anim', 'dd-drag', 'graphics', 'cssbutton','anim-rotate', function(YUI){mainFunction(YUI); if (isReadyCallback) {isReadyCallback()}})
 	}
+
+	var createDancer = function(id, type, order) {
+		dancerIds.push( {
+			id : "#dancer-" + order,
+			X : 0,
+			Y : 0,
+			obj : null,
+			anim : null,
+			type : type
+		});
+		var tmpObj = $("<div class='demo " + type + "' id='dancer-" + order + "' style='left:-500px; top:-500px;'>&nbsp;</div>");
+
+		$(canvasId).append(tmpObj);
+	}
+	
+	var createDancers = function(dancers) {
+		for (var i = 0; i < dancers.length; i++)
+		{
+			createDancer(dancers[i].id, dancers[i].class, i);
+		}
+
+		assignObjectsToDancers();
+	}
+	this.createDancers = createDancers;
 
 	var assignObjectsToDancers = function() {
 		for (var i = 0; i < dancerIds.length; i++) {
@@ -75,18 +83,26 @@ function Mover(graphicContainerId, canvasId) {
 		}
 	}
 
-	var animationFinished = function() {
-		setTimeout(function(){
-			YUIObj.Anim.stop();
-		},
-		1000);
-	}
+	var doFrame = function(frame) {
+		var duration = frame.duration;
+		var path = frame.path;
 
-	var doAnimationOnDancer = function(dancerObj, sylePoint, otherPoints, length) {
+		for (var i = 0; i < path.length; i++) {
+			var aa = []//[[dancerIds[i].X, dancerIds[i].Y]];
+			for (var j = 0; j < path[i].movement.length; j++) {
+				aa.push([path[i].movement[j].X, path[i].movement[j].Y])
+			}
+			doAnimationOnDancer(dancerIds[i], time = 0 ? [10,10] : null, aa);
+		}
+	}
+	this.doFrame = doFrame;
+
+	var doAnimationOnDancer = function(dancerObj, stylePoint, otherPoints, length) {
 
 		// Reset the animated element to the start position.
 		// This is needed for running the animation multiple times
-		dancerObj.obj.setStyles({'left':sylePoint[0], 'top':sylePoint[1]});;
+		if (stylePoint)
+			dancerObj.obj.setStyles({'left':stylePoint[0], 'top':stylePoint[1]});;
 
 
 		dancerObj.anim.set('to', {
@@ -98,14 +114,11 @@ function Mover(graphicContainerId, canvasId) {
 		});
 
 		dancerObj.anim.on("end",function(){
-			setTimeout(function(){
-				startAnimation();
-			},
-			500);
 		});
 
 		dancerObj.anim.run();
 	}
+	this.doAnimationOnDancer = doAnimationOnDancer;
 
 	var startAnimation = function(){
 		// Reset the animated element to the start position.
@@ -125,45 +138,25 @@ function Mover(graphicContainerId, canvasId) {
 	};
 
 	var mainFunction = function(YUIObjParam) {
-			YUIObj = YUIObjParam;
-			var Y = YUIObj;
-			//debugger;
+		YUIObj = YUIObjParam;
+		//debugger;
 
-				var mygraphic = new YUIObj.Graphic({render:"#mygraphiccontainer"}),
+		var mygraphic = new YUIObj.Graphic({render:"#mygraphiccontainer"}),
 
-					origin = YUIObj.one('.example'), // The XY values for the animation are based on the upper-left corner of this element
-					demoB = YUIObj.one('#demo2'), // The animated element
-					dotList = YUIObj.all('.dot');
-				graphicsContainer = node= YUIObj.one("#mygraphiccontainer");
+			origin = YUIObj.one('.example'), // The XY values for the animation are based on the upper-left corner of this element
+			dotList = YUIObj.all('.dot');
+		graphicsContainer = node= YUIObj.one("#mygraphiccontainer");
 
-				assignObjectsToDancers();
+		assignObjectsToDancers();
 
-				width=parseInt(node .getComputedStyle("width"),10);
-				height=parseInt(node .getComputedStyle("height"),10);
-				topLeft=YAHOO.util.Dom.getXY('mygraphiccontainer');
-				topRight=YAHOO.util.Dom.getXY('mygraphiccontainer'); topRight[0]=topLeft[0]+width;
-				bottomLeft=YAHOO.util.Dom.getXY('mygraphiccontainer'); bottomLeft[1]=topLeft[1]+height;
-				bottomRight=YAHOO.util.Dom.getXY('mygraphiccontainer'); bottomRight[0]=topLeft[0]+width;bottomRight[1]=topLeft[1]+height;
-
-
-
-				// button handler
-				YUIObj.one('#btn-animate').on('click', function(){
-					YUIObj.Anim.stop();
-					//setTimeout(startAnimation(), 500);
-				});
+		width=parseInt(node .getComputedStyle("width"),10);
+		height=parseInt(node .getComputedStyle("height"),10);
+		topLeft=YAHOO.util.Dom.getXY('mygraphiccontainer');
+		topRight=YAHOO.util.Dom.getXY('mygraphiccontainer'); topRight[0]=topLeft[0]+width;
+		bottomLeft=YAHOO.util.Dom.getXY('mygraphiccontainer'); bottomLeft[1]=topLeft[1]+height;
+		bottomRight=YAHOO.util.Dom.getXY('mygraphiccontainer'); bottomRight[0]=topLeft[0]+width;bottomRight[1]=topLeft[1]+height;
 	}
 	this.mainFunction = mainFunction;
 
 	init();
 };
-
-
-$(document).ready(function(){
-	var mover = new Mover("mygraphiccontainer", ".example");
-
-	YUI().use('anim', 'dd-drag', 'graphics', 'cssbutton','anim-rotate', function(YUIObj){mover.mainFunction(YUIObj)});
-})
-
-
-
