@@ -4,7 +4,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Movesync.us</title>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/app.css" rel="stylesheet" media="screen">
 		<script src="scripts/jquery.min.js" type="text/javascript"></script>
 		<script src="scripts/ocanvas-2.4.0.min.js" type="text/javascript"></script>
 		<link rel="stylesheet/less" type="text/css" href="style/movesync.less">
@@ -158,50 +160,135 @@
     </style>
     </head>
 	<body>
+    <div class="container-fluid">
+        <div class="hero-unit">
+            <h1>moveSync</h1>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <audio controls>
+            <source src="assets/sudmalinas.mp3">
+        </audio>
+    </div>
+    <div class="container-fluid">
+
+        <div class="row-fluid">
+            <div class="span3">
+                <div id="movesync-description" style="overflow:scroll; height:400px;">
+
+                </div>
+            </div>
+            <div class="span9">
+                <div class="hero-unit">
+                    <div class="example">
+                        <div id="mygraphiccontainer"></div> <!-- Container for the preview of the curve line -->
+                        <div id="info">
+                            <button id="btn-animate" class='yui3-button'>Animate On Path</button>
+                            <p>To see anim along a path, click the button above, or drag point 0, 1, 2, or 3.</p>
+                            <p>The X and Y of point 0 is <code>[<span class="arr0">92,103</span>]</code></p>
+                            <p>The X and Y of 1, 2, and 3, are the sub-arrays in array value of "curve:" in the anim.set()</p>
+                            <p><code>anim.set('to', {curve: [
+                                [<span class="arr1">147,317</span>],
+                                [<span class="arr2">532,179</span>],
+                                [<span class="arr3">538,288</span>] ]});</code></p>
+                        </div>
+                        <div id="dot-0" class="dot zero">
+                            <div class="point"></div>
+                            <div class="fat-finger" title="Drag to change start point"></div> <!-- Gives the points a larger target area to drag -->
+                            <div class="number-label">0</div>
+                        </div>
+                        <div id="dot-1" class="dot one">
+                            <div class="point"></div>
+                            <div class="fat-finger" title="Drag to change path"></div>
+                            <div class="number-label">1</div>
+                        </div>
+
+                        <div id="dot-3" class="dot three">
+                            <div class="point"></div>
+                            <div class="fat-finger" title="Drag to change end point"></div>
+                            <div class="number-label">3</div>
+                        </div>
+                        <div id="demo">&nbsp;</div>
+
+
+                        <canvas id="canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        var descOfDance = {
+            stageSize : {width:1000, height:1000},
+            dancers : 	[{class : "boy", id : 1}, {class : "boy", id : 2}, {class : "girl", id : 1}, {class : "girl", id : 2}],
+            frames : [
+                {
+                    time : 0,
+                    duration : 2000,
+                    path : [{class:"boy", id: 1, movement : [{X: 100, Y: 100}]}, {class:"boy", id: 2, movement : [{X: 100, Y: 300}]}, {class:"girl", id: 1, movement : [{X: 100, Y: 700}]}, {class:"girl", id: 1, movement : [{X: 100, Y: 900}]}]
+                },
+                {
+                    time : 2000,
+                    duration : 3000,
+                    path : [{class:"boy", id: 1, movement : [{X: 900, Y: 100}]}, {class:"boy", id: 2, movement : [{X: 900, Y: 300}]}, {class:"girl", id: 1, movement : [{X: 900, Y: 700}]}, {class:"girl", id: 1, movement : [{X: 900, Y: 900}]}]
+                }
+            ],
+            description : 	[
+                {
+                    name : "1st movement",
+                    instructions : [
+                        {
+                            from : 1,
+                            to : 6,
+                            text : "Dancers take each other by hand and form a circle. Starting witf right feet with 6 polkas dancers move the circle counterclockwise"
+                        },
+                        {
+                            from : 7,
+                            to : 8,
+                            text : "Dancers, standing towards center of the circle release the hands and clap their hands 3 times"
+                        },
+                        {
+                            from : 9,
+                            to : 16,
+                            text : "Dancers repeat same actions from beat 1-8, but moving the circle clockwise. At the beat 16 form a square"
+                        }
+                    ]
+                },
+                {
+                    name : "2nd movement",
+                    instructions : [
+                        {
+                            from : 1,
+                            to : 8,
+                            text : "First half of pairs with waist-shoulder grasp dance the round polka towards center. When danced halfcircle around each other they return in their initial places"
+                        },
+                        {
+                            from : 9,
+                            to : 16,
+                            text : "Dancers repeat same actions as in beat 1-8, but moving the circle clockwise. At the beat 16 they form a square"
+                        }
+                    ]
+                }
+            ]
+        }
+
+        var dance;
+        $(document).ready(function(){
+            dance = new Dance(descOfDance);
+        })
+    </script>
+
+    <script src="js/movesync/DescriptionBar.js"></script>
+    <script src="js/movesync/Dancer.js"></script>
+    <script src="js/movesync/Stage.js"></script>
+    <script src="js/movesync/Dance.js"></script>
+    <script src="scripts/player.js"></script>
 
     <!-- In order for the script to run, this HTML markup must be nested in a
 -->
-    <div class="example">
-        <div id="mygraphiccontainer"></div> <!-- Container for the preview of the curve line -->
-        <div id="info">
-            <button id="btn-animate" class='yui3-button'>Animate On Path</button>
-            <p>To see anim along a path, click the button above, or drag point 0, 1, 2, or 3.</p>
-            <p>The X and Y of point 0 is <code>[<span class="arr0">92,103</span>]</code></p>
-            <p>The X and Y of 1, 2, and 3, are the sub-arrays in array value of "curve:" in the anim.set()</p>
-            <p><code>anim.set('to', {curve: [
-                [<span class="arr1">147,317</span>],
-                [<span class="arr2">532,179</span>],
-                [<span class="arr3">538,288</span>] ]});</code></p>
-        </div>
-        <div id="dot-0" class="dot zero">
-            <div class="point"></div>
-            <div class="fat-finger" title="Drag to change start point"></div> <!-- Gives the points a larger target area to drag -->
-            <div class="number-label">0</div>
-        </div>
-        <div id="dot-1" class="dot one">
-            <div class="point"></div>
-            <div class="fat-finger" title="Drag to change path"></div>
-            <div class="number-label">1</div>
-        </div>
-
-        <div id="dot-3" class="dot three">
-            <div class="point"></div>
-            <div class="fat-finger" title="Drag to change end point"></div>
-            <div class="number-label">3</div>
-        </div>
-        <div id="demo">&nbsp;</div>
 
 
-        <canvas id="canvas"></canvas>
-        <div id="player">Here be teh music player</div>
-        <script type="text/javascript">
-            jwplayer("player").setup({
-                flashplayer: 'assets/jwplayer.flash.swf',
-                file: "assets/sudmalinas.mp3",
-                height: 24,
-                width: 640,
-                controlbar: 'bottom'
-            });
-        </script>
 	</body>
 </html>
