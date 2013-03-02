@@ -7,3 +7,96 @@ audio {
 	width: 100%;
 
 }
+.example {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    border:1px solid #87ceeb;
+}
+
+
+.example div, .example p, .example span{
+    padding: 0;
+    margin: 0;
+}
+
+#mygraphiccontainer {
+    width: 600px;
+    height: 600px;
+}
+
+.example #demo,.example #demo2 {
+    background-image: url("../assets/u.png");
+    position: absolute;
+    left: 92px;
+    top: 103px;
+    /*background-color: #f00;*/
+    text-align: center;
+    line-height: 1.5em;
+    /*border: solid 1px #cc0000;*/
+    /*            border-radius: 0;
+                -moz-box-shadow: 3px 3px 7px rgba(0,0,0,0.4);
+                -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.4);*/
+    width: 20px;
+    height: 20px;
+    background-size:cover;
+}
+
+.dot {
+    position: absolute;
+    color: #396491;
+    font-size: 20px;
+    height: 0;
+    line-height: 12px;
+    opacity: 0.8;
+    width: 0;
+    cursor: move;
+}
+
+.dot .point {
+    background-color: #000;
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    font-size: 0px;
+}
+
+.number-label {
+    position: absolute;
+    top: -1em;
+    left: -0.9em;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+}
+
+/* Gives the points a larger target area to drag */
+.dot .fat-finger {
+    position: absolute;
+    top: -30px; /* minus half the fat-finger height */
+    left: -30px;
+    width: 60px;
+    height: 60px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    background-color: #abc;
+    opacity: 0.3;
+    filter: alpha (opacity = 30);
+}
+
+
+code span {
+    color: #CC3300;
+}
+
+.point {
+    font-size: 24px;
+    left: 5px;
+    position: absolute;
+    top: -5px;
+}
