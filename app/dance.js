@@ -8,6 +8,7 @@ var danceVar = {
 				time : 0,
 				duration : 4000,
 				descriptionId : 0,
+				instructionId : null,
 				path : [
 					{class:"boy", id: 1, movement : [{X: 875, Y: 625}, {X: 875, Y: 625}], angle : 22.25},
 					{class:"boy", id: 2, movement : [{X: 625, Y: 125}, {X: 625, Y: 125}], angle : 292.25},
@@ -23,6 +24,7 @@ var danceVar = {
 				time : 3,
 				duration : 3000,
 				descriptionId : 1,
+				instructionId : 1,
 				path : [
 					{class:"boy", id: 1, movement : [{X: 750, Y: 1000}, {X: 375, Y: 875}], angle : 112.25},
 					{class:"boy", id: 2, movement : [{X: 1000, Y: 250}, {X: 875, Y: 625}], angle : 22.25},
@@ -38,6 +40,7 @@ var danceVar = {
 				time : 6,
 				duration : 3000,
 				descriptionId : 0,
+				instructionId : 1,
 				path : [
 					{class:"boy", id: 1, movement : [{X: 0, Y: 750}, {X: 125, Y: 375}], angle : 202.25},
 					{class:"boy", id: 2, movement : [{X: 750, Y: 1000}, {X: 375, Y: 875}], angle : 112.25},
@@ -53,6 +56,7 @@ var danceVar = {
 				time : 9,
 				duration : 500,
 				descriptionId : 0,
+				instructionId : 2,
 				path : [
 					{class:"boy", id: 1, movement : [{X: 125, Y: 375}, {X: 125, Y: 375}], angle : 292.25},
 					{class:"boy", id: 2, movement : [{X: 375, Y: 875}, {X: 375, Y: 875}], angle : 202.25},
@@ -68,6 +72,7 @@ var danceVar = {
 				time : 10,
 				duration : 500,
 				descriptionId : 0,
+				instructionId : 2,
 				path : [
 					{class:"boy", id: 1, movement : [{X: 125, Y: 375}, {X: 125, Y: 375}], angle : 22.25},
 					{class:"boy", id: 2, movement : [{X: 375, Y: 875}, {X: 375, Y: 875}], angle : 292.25},
@@ -83,6 +88,7 @@ var danceVar = {
 				time : 11,
 				duration : 3000,
 				descriptionId : 0,
+				instructionId : 3,
 				path : [
 					{class:"boy", id: 1, movement : [{X: 0, Y: 750}, {X: 375, Y: 875}], angle : 292.25},
 					{class:"boy", id: 2, movement : [{X: 750, Y: 1000}, {X: 875, Y: 625}], angle : 202.25},
@@ -98,6 +104,7 @@ var danceVar = {
 				time : 14,
 				duration : 3000,
 				descriptionId : 1,
+				instructionId : 3,
 				path : [
 					{class:"boy", id: 1, movement : [{X: 750, Y: 1000}, {X: 875, Y: 625}], angle : 202.25},
 					{class:"boy", id: 2, movement : [{X: 1000, Y: 250}, {X: 625, Y: 125}], angle : 112.25},

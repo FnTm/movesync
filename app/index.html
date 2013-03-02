@@ -2,33 +2,32 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Movesync.us</title>
+		<title>moveSync.us</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="css/app.css" rel="stylesheet" media="screen">
-  <script src="scripts/jquery.min.js" type="text/javascript"></script>
-  <script src="scripts/ocanvas-2.4.0.min.js" type="text/javascript"></script>
-  <link rel="stylesheet/less" type="text/css" href="style/movesync.less">
-  <script src="scripts/less-1.3.3.min.js" type="text/javascript"></script>
+		<script src="scripts/jquery.min.js" type="text/javascript"></script>
+		<script src="scripts/ocanvas-2.4.0.min.js" type="text/javascript"></script>
+		<link rel="stylesheet/less" type="text/css" href="style/movesync.less">
+		<script src="scripts/less-1.3.3.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="js/jwplayer.js" ></script>
 	</head>
- <body>
+ 	<body>
 	
 	<div class="container-fluid">
-	 <div class="row-fluid">
-	  <div class="logo span3">
-	   <img src="assets/logo.png"/>
-	  </div>
-	  <div class="headInfo span9">
-	   <audio controls>
-			 <source src="assets/sudmalinas.mp3">
-		 </audio>
-	  </div>
-	 </div>
+		<div class="row-fluid">
+			<div class="logo span3">
+				<img src="assets/logo.png"/>
+			</div>
+			<div class="headInfo span9">
+				<audio controls>
+					<source src="assets/sudmalinas.mp3">
+				</audio>
+			</div>
+		</div>
 	</div>
    
 	<div class="container-fluid">
-
 		<div class="row-fluid">
 			<div class="span4">
 			
@@ -76,7 +75,6 @@
 	<script src="dance.js"></script>
 
 	<script src="scripts/model.js"></script>
-	<!--<script src="scripts/move.js" type="text/javascript"></script>-->
 	<script src="scripts/move2.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
@@ -103,8 +101,15 @@
 				$("#description" + stepId).addClass("active");
 			};
 
+			highlightInstruction = function(frameId) {
+				var stepId = dance.frames[frameId].instructionId; 
+				$("div.instruction-active").removeClass("instruction-active");
+				$("#instruction" + stepId).addClass("instruction-active");
+			}
+
 			fireEvent = function(param) {
-				highlighStep(param);
+				//highlighStep(param);
+				highlightInstruction(param);
 				var movement = dance.frames[param];
 
 				console.log(movement);
@@ -122,7 +127,7 @@
 						instructionVO.text = dance.description[i].instructions[j].text;
 						instructionVO.from = dance.description[i].instructions[j].from;
 						instructionVO.to = dance.description[i].instructions[j].to;
-						descrElem = descrElem + "<div id='instruction" + index +"'>" + instructionVO.from + " - " + instructionVO.to + ". " + instructionVO.text + "</div>";
+						descrElem = descrElem + "<div id='instruction" + dance.description[i].instructions[j].id +"'>" + instructionVO.from + " - " + instructionVO.to + ". " + instructionVO.text + "</div>";
 						index +=1;
 					}
 					descrElem = descrElem + "</div>";
@@ -146,19 +151,6 @@
 			mover = new Mover("mygraphiccontainer", ".example", moverReadyCallback);
 
 			movesync.player.initPlayer(getFramesArray(), fireEvent);
-
-
-			/*
-			//Sets up references to dance object and the mover, generates the startPoint array
-			movesync.model.loadDance(danceVar, mover);
-			
-			//passes the frame points and callback event to switch frames
-			movesync.player.initPlayer(movesync.model.getMovementsStartPoints(), movesync.model.fireEvent );
-
-			//1. generates dance description on the left
-			//2. 
-			movesync.model.prepareStage();
-			*/
 		}); 
 	</script>
 		<!-- In order for the script to run, this HTML markup must be nested in a
