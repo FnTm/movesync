@@ -51,8 +51,8 @@ function Mover(graphicContainerId, canvasId, isReadyCallback) {
 	var createDancer = function(id, type, order) {
 		dancerIds.push( {
 			id : "#dancer-" + order,
-			X : 0,
-			Y : 0,
+			X : -1,
+			Y : -1,
 			obj : null,
 			anim : null,
 			type : type
@@ -90,9 +90,11 @@ function Mover(graphicContainerId, canvasId, isReadyCallback) {
 		for (var i = 0; i < path.length; i++) {
 			var aa = []//[[dancerIds[i].X, dancerIds[i].Y]];
 			for (var j = 0; j < path[i].movement.length; j++) {
-				aa.push([path[i].movement[j].X, path[i].movement[j].Y])
+				var newX = path[i].movement[j].X / 1000 * width + topLeft[0];
+				var newY = path[i].movement[j].Y / 1000 * height + topLeft[1];
+				aa.push([newX, newY]);
 			}
-			doAnimationOnDancer(dancerIds[i], time = 0 ? [10,10] : null, aa);
+;			doAnimationOnDancer(dancerIds[i], time = 0 ? [10,10] : null, aa, duration);
 		}
 	}
 	this.doFrame = doFrame;
@@ -101,8 +103,15 @@ function Mover(graphicContainerId, canvasId, isReadyCallback) {
 
 		// Reset the animated element to the start position.
 		// This is needed for running the animation multiple times
+		/*
 		if (stylePoint)
 			dancerObj.obj.setStyles({'left':stylePoint[0], 'top':stylePoint[1]});;
+		*/
+		if (dancerObj.X < 0) {
+			dancerObj.obj.setStyles({'left':otherPoints[0][0] - topLeft[0], 'top':otherPoints[0][1] - topLeft[1]});
+			dancerObj.X = otherPoints[0][0];
+			dancerObj.Y = otherPoints[0][1];
+		}
 
 
 		dancerObj.anim.set('to', {
@@ -110,7 +119,8 @@ function Mover(graphicContainerId, canvasId, isReadyCallback) {
 			rotate : '360'
 		});
 		dancerObj.anim.set('from', {
-			rotate : '0'
+			rotate : '0',
+			duration : length/1000
 		});
 
 		dancerObj.anim.on("end",function(){

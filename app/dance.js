@@ -6,12 +6,12 @@ var danceVar = {
 		frames : [
 			{
 				time : 0,
-				duration : 1000,
+				duration : 4000,
 				descriptionId : 0,
 				path : [
 					{class:"boy", id: 1, movement : [{X: 875, Y: 625}, {X: 875, Y: 625}], rotation : 66.75},
 					{class:"boy", id: 2, movement : [{X: 625, Y: 125}, {X: 625, Y: 125}], rotation : 156.75},
-					{class:"boy", id: 3, movement : [{X: 125, Y: 625}, {X: 125, Y: 625}], rotation : 246.75},
+					{class:"boy", id: 3, movement : [{X: 125, Y: 375}, {X: 125, Y: 375}], rotation : 246.75},
 					{class:"boy", id: 4, movement : [{X: 375, Y: 875}, {X: 375, Y: 875}], rotation : 336.75},
 					{class:"girl", id: 1, movement : [{X: 625, Y: 875}, {X: 625, Y: 875}], rotation : 22.25},
 					{class:"girl", id: 2, movement : [{X: 875, Y: 375}, {X: 875, Y: 375}], rotation : 112.25},
@@ -24,46 +24,46 @@ var danceVar = {
 				duration : 1500,
 				descriptionId : 1,
 				path : [
-					{class:"boy", id: 2, movement : [{X: 875, Y: 625}, {X: 1000, Y: 250}], rotation : 66.75},
-					{class:"boy", id: 3, movement : [{X: 625, Y: 125}, {X: 250, Y: 0}], rotation : 156.75},
-					{class:"boy", id: 4, movement : [{X: 125, Y: 625}, {X: 0, Y: 750}], rotation : 246.75},
-					{class:"boy", id: 1, movement : [{X: 375, Y: 875}, {X: 750, Y: 1000}], rotation : 336.75},
-					{class:"girl", id: 2, movement : [{X: 625, Y: 875}, {X: 1000, Y: 750}], rotation : 22.25},
-					{class:"girl", id: 3, movement : [{X: 875, Y: 375}, {X: 750, Y: 0}], rotation : 112.25},
-					{class:"girl", id: 4, movement : [{X: 375, Y: 125}, {X: 0, Y: 250}], rotation : 202.25},
-					{class:"girl", id: 1, movement : [{X: 125, Y: 625}, {X: 250, Y: 100}], rotation : 292.25}
+					{class:"boy", id: 1, movement : [{X: 750, Y: 1000}, {X: 375, Y: 875}], rotation : 336.75},
+					{class:"boy", id: 2, movement : [{X: 1000, Y: 250}, {X: 875, Y: 625}], rotation : 66.75},
+					{class:"boy", id: 3, movement : [{X: 250, Y: 0}, {X: 625, Y: 125}], rotation : 156.75},
+					{class:"boy", id: 4, movement : [{X: 0, Y: 750}, {X: 125, Y: 375}], rotation : 246.75},
+					{class:"girl", id: 1, movement : [{X: 250, Y: 1000}, {X: 125, Y: 625}], rotation : 292.25},
+					{class:"girl", id: 2, movement : [{X: 1000, Y: 750}, {X: 625, Y: 875}], rotation : 22.25},
+					{class:"girl", id: 3, movement : [{X: 750, Y: 0}, {X: 875, Y: 375}], rotation : 112.25},
+					{class:"girl", id: 4, movement : [{X: 0, Y: 250}, {X: 375, Y: 125}], rotation : 202.25}
 					]
 			},
 			{
 				time : 10,
-				duration : 1500,
+				duration : 400,
 				descriptionId : 0,
 				path : [
-					{class:"boy", id: 3, movement : [{X: 875, Y: 625}, {X: 1000, Y: 250}], rotation : 66.75},
-					{class:"boy", id: 4, movement : [{X: 625, Y: 125}, {X: 250, Y: 0}], rotation : 156.75},
-					{class:"boy", id: 1, movement : [{X: 125, Y: 625}, {X: 0, Y: 750}], rotation : 246.75},
-					{class:"boy", id: 2, movement : [{X: 375, Y: 875}, {X: 750, Y: 1000}], rotation : 336.75},
-					{class:"girl", id: 3, movement : [{X: 625, Y: 875}, {X: 1000, Y: 750}], rotation : 22.25},
-					{class:"girl", id: 4, movement : [{X: 875, Y: 375}, {X: 750, Y: 0}], rotation : 112.25},
-					{class:"girl", id: 1, movement : [{X: 375, Y: 125}, {X: 0, Y: 250}], rotation : 202.25},
-					{class:"girl", id: 2, movement : [{X: 125, Y: 625}, {X: 250, Y: 100}], rotation : 292.25}
+					{class:"boy", id: 1, movement : [{X: 0, Y: 750}, {X: 125, Y: 375}], rotation : 246.75},
+					{class:"boy", id: 2, movement : [{X: 750, Y: 1000}, {X: 375, Y: 875}], rotation : 336.75},
+					{class:"boy", id: 3, movement : [{X: 1000, Y: 250}, {X: 875, Y: 625}], rotation : 66.75},
+					{class:"boy", id: 4, movement : [{X: 250, Y: 0}, {X: 625, Y: 125}], rotation : 156.75},
+					{class:"girl", id: 1, movement : [{X: 0, Y: 250}, {X: 375, Y: 125}], rotation : 202.25},
+					{class:"girl", id: 2, movement : [{X: 250, Y: 1000}, {X: 125, Y: 625}], rotation : 292.25},
+					{class:"girl", id: 3, movement : [{X: 1000, Y: 750}, {X: 625, Y: 875}], rotation : 22.25},
+					{class:"girl", id: 4, movement : [{X: 750, Y: 0}, {X: 875, Y: 375}], rotation : 112.25}
 					]
-			},
+			}/*,
 			{
 				time : 15,
 				duration : 500,
 				descriptionId : 1,
 				path : [
-					{class:"boy", id: 3, movement : [{X: 875, Y: 625}, {X: 1000, Y: 250}], rotation : 156.75},
-					{class:"boy", id: 4, movement : [{X: 625, Y: 125}, {X: 250, Y: 0}], rotation : 246.75},
-					{class:"boy", id: 1, movement : [{X: 125, Y: 625}, {X: 0, Y: 750}], rotation : 336.75},
-					{class:"boy", id: 2, movement : [{X: 375, Y: 875}, {X: 750, Y: 1000}], rotation : 66.75},
-					{class:"girl", id: 3, movement : [{X: 625, Y: 875}, {X: 1000, Y: 750}], rotation : 112.25},
-					{class:"girl", id: 4, movement : [{X: 875, Y: 375}, {X: 750, Y: 0}], rotation : 202.25},
-					{class:"girl", id: 1, movement : [{X: 375, Y: 125}, {X: 0, Y: 250}], rotation : 202.25},
-					{class:"girl", id: 2, movement : [{X: 125, Y: 625}, {X: 250, Y: 100}], rotation : 22.25}
+					{class:"boy", id: 1, movement : [{X: 0, Y: 750}, {X: 125, Y: 625}], rotation : 336.75},
+					{class:"boy", id: 2, movement : [{X: 750, Y: 1000}, {X: 375, Y: 875}], rotation : 66.75},
+					{class:"boy", id: 3, movement : [{X: 1000, Y: 250}, {X: 875, Y: 625}], rotation : 156.75},
+					{class:"boy", id: 4, movement : [{X: 250, Y: 0}, {X: 625, Y: 125}], rotation : 246.75},
+					{class:"girl", id: 1, movement : [{X: 0, Y: 250}, {X: 375, Y: 125}], rotation : 202.25},
+					{class:"girl", id: 2, movement : [{X: 250, Y: 100}, {X: 125, Y: 625}], rotation : 22.25},
+					{class:"girl", id: 3, movement : [{X: 1000, Y: 750}, {X: 625, Y: 875}], rotation : 112.25},
+					{class:"girl", id: 4, movement : [{X: 750, Y: 0}, {X: 875, Y: 375}], rotation : 202.25}
 					]
-			}
+			}*/
 		],
 		description : 	[
 			{
