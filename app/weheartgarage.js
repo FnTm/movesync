@@ -1,4 +1,4 @@
-var danceVar = {
+var weHeartGarage = {
 		stageSize : {width:1000, height:1000},
 		dancers : 	[
 			{class : "tank", id : 1}, {class : "tank", id : 2}, {class : "tank", id : 3}, {class : "tank", id : 4},
