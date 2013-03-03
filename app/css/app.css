@@ -292,3 +292,13 @@ body {
 	font-size: 1.2em;
 	padding-top: 5%;
 }
+
+.aboutDiv {
+	position: absolute;
+    top: 40px;
+    left: 10px;
+}
+
+.aboutDiv > a {
+	color: grey;
+}
