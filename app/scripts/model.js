@@ -6,19 +6,28 @@ movesync.model = function() {
 	/*array of KeyTime Point.(time intervals when movements start)*/
 	var movementsArray = [];
 
+	var mover;
+
 	/*
 	 * Loading dance from JSON.
 	 */
-	loadDance = function(url) {
-//		for future - AJAX call will be done.
-//		$.getJSON(url, function(data) {
-//			return data;
-//		});
-		dance = danceVar;
-		appendMovementsToDescrArea();
+	loadDance = function(danceParam, moverParam) {
+		//		for future - AJAX call will be done.
+		//		$.getJSON(url, function(data) {
+		//			return data;
+		//		});
+		mover = moverParam;
+		dance = danceParam;
 		performFramesArray();
-        console.log("sd");
 	};
+
+	prepareStage = function() {
+		appendMovementsToDescrArea();
+        //createDancers();
+
+        mover.createDancers(dance.dancers);
+        console.log("sd");
+	}
 	
 	/*
 	 * Fills description area with step-description data
@@ -41,11 +50,35 @@ movesync.model = function() {
 			mainPlaceholder.append(descrElem);
 			
 		}
-        createDancers();
 	};
+
 	createDancers=function(){
         initField(dance);
     }
+    setUpButtons = function () {
+        var findMe = $('#findMe');
+        var clearMe = $('#clearMe');
+
+        findMe.click(function () {
+            var findValue = $("#findMeCode").val();
+            if (findValue != "") {
+                var node = $("#" + findValue);
+                console.log(node);
+                if (node.length > 0) {
+                    console.log("found");
+                    node.addClass("findMe");
+                }
+            }
+        });
+        clearMe.click(function(){
+            console.log($(".dancer"));
+            $(".dancer").removeClass("findMe");
+            $("#findMeCode").val("");
+            console.log("clear");
+        });
+
+    }
+
 	/*
 	 * Used for filling movements array needed in player
 	 */
@@ -67,14 +100,15 @@ movesync.model = function() {
 		$("div.active").removeClass("active");
 		$("#description" + stepId).addClass("active");
 	};
-	
-	/*
-	 * Stub. Will be replaced on drawing call.
-	 */
+
+
+    /*
+     * Stub. Will be replaced on drawing call.
+     */
 	drawAnimationStub = function(mvmnt) {
 		console.log("Came soon. For now, imagine, that figures are moving.");
 		console.log(mvmnt);
-        moveFrame(mvmnt);
+		mover.doFrame(mvmnt);
 	}
 	
 	/*
@@ -82,20 +116,14 @@ movesync.model = function() {
 	 */
 	fireEvent = function(param) {
 		highlighStep(param);
-//		movesync.animation.draw(param);
+		//		movesync.animation.draw(param);
 		drawAnimationStub(dance.frames[param]);
 	}
 	
 	return {
 		"loadDance" 					:  		loadDance,
 		"getMovementsStartPoints" 		: 		getMovementsStartPoints,
-		"fireEvent" 					: 		fireEvent
+		"fireEvent" 					: 		fireEvent,
+		"prepareStage"					: 		prepareStage
 	}
 }();
-
-$(document).ready(function(){
-	
-	movesync.model.loadDance("app/dance.json");
-	
-	movesync.player.initPlayer(movesync.model.getMovementsStartPoints(), movesync.model.fireEvent );
-});	
