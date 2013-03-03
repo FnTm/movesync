@@ -25,7 +25,7 @@ audio {
 
 #mygraphiccontainer {
     width: 100%;
-    height: 600px;
+    height: 500px;
 }
 
 #mygraphiccontainer > * {
@@ -235,4 +235,18 @@ body {
 
 #playMessage > div {
 	display: inline;
+}
+
+.problemLine {
+	padding-top: 1%;
+}
+
+.teamMembers2 {
+	padding-top: 5%;
+}
+
+.teamMembers img,
+.teamMembers2 img {
+	width: 100px;
+	height: 100px;
 }
