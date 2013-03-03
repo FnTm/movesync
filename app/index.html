@@ -114,6 +114,8 @@
 				//highlighStep(param);
 				highlightInstruction(param);
 				var movement = dance.frames[param];
+				mover.doFrame(movement);
+			}
 
 			appendMovementsToDescrArea = function() {
 				var mainPlaceholder = $("#movesync-description");
