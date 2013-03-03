@@ -9,14 +9,14 @@ var danceVar = {
 				duration : 2000,
 				descriptionId : 0,
 				path : [
-					{class:"tank", id: 1, movement : [{X: 900, Y: 450}, {X: 900, Y: 450}], rotation : 66.75},
-					{class:"tank", id: 2, movement : [{X: 900, Y: 550}, {X: 900, Y: 550}], rotation : 156.75},
-					{class:"tank", id: 3, movement : [{X: 850, Y: 450}, {X: 850, Y: 450}], rotation : 246.75},
-					{class:"tank", id: 4, movement : [{X: 850, Y: 550}, {X: 850, Y: 550}], rotation : 336.75},
-					{class:"tank", id: 1, movement : [{X: 800, Y: 450}, {X: 800, Y: 450}], rotation : 22.25},
-					{class:"tank", id: 2, movement : [{X: 800, Y: 550}, {X: 800, Y: 550}], rotation : 112.25},
-					{class:"tank", id: 3, movement : [{X: 750, Y: 450}, {X: 750, Y: 450}], rotation : 202.25},
-					{class:"tank", id: 4, movement : [{X: 750, Y: 550}, {X: 750, Y: 550}], rotation : 292.25}
+					{class:"tank", id: 1, movement : [{X: 900, Y: 450}, {X: 900, Y: 450}], angle:0},
+					{class:"tank", id: 2, movement : [{X: 900, Y: 550}, {X: 900, Y: 550}], angle:0},
+					{class:"tank", id: 3, movement : [{X: 850, Y: 450}, {X: 850, Y: 450}], angle:0},
+					{class:"tank", id: 4, movement : [{X: 850, Y: 550}, {X: 850, Y: 550}], angle:0},
+					{class:"tank", id: 1, movement : [{X: 800, Y: 450}, {X: 800, Y: 450}], angle:0},
+					{class:"tank", id: 2, movement : [{X: 800, Y: 550}, {X: 800, Y: 550}], angle:0},
+					{class:"tank", id: 3, movement : [{X: 750, Y: 450}, {X: 750, Y: 450}], angle:0},
+					{class:"tank", id: 4, movement : [{X: 750, Y: 550}, {X: 750, Y: 550}], angle:0}
 					]
 			},
 			{
@@ -24,14 +24,14 @@ var danceVar = {
 				duration : 2000,
 				descriptionId : 1,
 				path : [
-                    {class:"tank", id: 1, movement : [{X: 900, Y: 450}, {X: 800, Y: 450}], rotation : 66.75},
-                    {class:"tank", id: 2, movement : [{X: 900, Y: 550}, {X: 800, Y: 550}], rotation : 156.75},
-                    {class:"tank", id: 3, movement : [{X: 850, Y: 450}, {X: 750, Y: 450}], rotation : 246.75},
-                    {class:"tank", id: 4, movement : [{X: 850, Y: 550}, {X: 750, Y: 550}], rotation : 336.75},
-                    {class:"tank", id: 1, movement : [{X: 800, Y: 450}, {X: 700, Y: 450}], rotation : 22.25},
-                    {class:"tank", id: 2, movement : [{X: 800, Y: 550}, {X: 700, Y: 550}], rotation : 112.25},
-                    {class:"tank", id: 3, movement : [{X: 750, Y: 450}, {X: 650, Y: 450}], rotation : 202.25},
-                    {class:"tank", id: 4, movement : [{X: 750, Y: 550}, {X: 650, Y: 550}], rotation : 292.25}
+                    {class:"tank", id: 1, movement : [{X: 900, Y: 450}, {X: 800, Y: 450}], angle:0},
+                    {class:"tank", id: 2, movement : [{X: 900, Y: 550}, {X: 800, Y: 550}], angle:0},
+                    {class:"tank", id: 3, movement : [{X: 850, Y: 450}, {X: 750, Y: 450}], angle:0},
+                    {class:"tank", id: 4, movement : [{X: 850, Y: 550}, {X: 750, Y: 550}], angle:0},
+                    {class:"tank", id: 1, movement : [{X: 800, Y: 450}, {X: 700, Y: 450}], angle:0},
+                    {class:"tank", id: 2, movement : [{X: 800, Y: 550}, {X: 700, Y: 550}], angle:0},
+                    {class:"tank", id: 3, movement : [{X: 750, Y: 450}, {X: 650, Y: 450}], angle:0},
+                    {class:"tank", id: 4, movement : [{X: 750, Y: 550}, {X: 650, Y: 550}], angle:0}
                 ]
 			},
 			{
@@ -39,14 +39,14 @@ var danceVar = {
 				duration : 2000,
 				descriptionId : 0,
 				path : [
-					{class:"tank", id: 3, movement : [ {X: 800, Y: 450}, {X: 700, Y: 325}], rotation : 66.75},
-					{class:"tank", id: 4, movement : [{X: 800, Y: 550}, {X: 700, Y: 450}], rotation : 156.75},
-					{class:"tank", id: 1, movement : [{X: 750, Y: 450}, {X: 650, Y: 325}], rotation : 246.75},
-					{class:"tank", id: 2, movement : [{X: 750, Y: 550}, {X: 650, Y: 450}], rotation : 336.75},
-					{class:"tank", id: 3, movement : [{X: 700, Y: 450}, {X: 600, Y: 325}], rotation : 22.25},
-					{class:"tank", id: 4, movement : [{X: 700, Y: 550}, {X: 600, Y: 450}], rotation : 112.25},
-					{class:"tank", id: 1, movement : [{X: 650, Y: 450}, {X: 550, Y: 325}], rotation : 202.25},
-					{class:"tank", id: 2, movement : [{X: 650, Y: 550}, {X: 550, Y: 450}], rotation : 292.25}
+					{class:"tank", id: 3, movement : [ {X: 800, Y: 450}, {X: 700, Y: 325}],angle:45},
+					{class:"tank", id: 4, movement : [{X: 800, Y: 550}, {X: 700, Y: 450}], angle:45},
+					{class:"tank", id: 1, movement : [{X: 750, Y: 450}, {X: 650, Y: 325}], angle:45},
+					{class:"tank", id: 2, movement : [{X: 750, Y: 550}, {X: 650, Y: 450}], angle:45},
+					{class:"tank", id: 3, movement : [{X: 700, Y: 450}, {X: 600, Y: 325}], angle:45},
+					{class:"tank", id: 4, movement : [{X: 700, Y: 550}, {X: 600, Y: 450}], angle:45},
+					{class:"tank", id: 1, movement : [{X: 650, Y: 450}, {X: 550, Y: 325}], angle:45},
+					{class:"tank", id: 2, movement : [{X: 650, Y: 550}, {X: 550, Y: 450}], angle:45}
 					]
 			}
 			,
@@ -55,14 +55,14 @@ var danceVar = {
 				duration : 2000,
 				descriptionId : 0,
 				path : [
-					{class:"tank", id: 3, movement : [ {X: 700, Y: 325}, {X: 700, Y: 325}], rotation : 66.75},
-					{class:"tank", id: 4, movement : [{X: 700, Y: 450}, {X: 700, Y: 450}], rotation : 156.75},
-					{class:"tank", id: 1, movement : [{X: 650, Y: 325}, {X: 650, Y: 325}], rotation : 246.75},
-					{class:"tank", id: 2, movement : [{X: 650, Y: 450}, {X: 650, Y: 450}], rotation : 336.75},
-					{class:"tank", id: 3, movement : [ {X: 600, Y: 325}, {X: 600, Y: 525}], rotation : 22.25},
-					{class:"tank", id: 4, movement : [ {X: 600, Y: 450}, {X: 600, Y: 750}], rotation : 112.25},
-					{class:"tank", id: 1, movement :  [{X: 550, Y: 325}, {X: 550, Y: 525}], rotation : 202.25},
-					{class:"tank", id: 2, movement :  [{X: 550, Y: 450}, {X: 550, Y: 750}], rotation : 292.25}
+					{class:"tank", id: 3, movement : [ {X: 700, Y: 325}, {X: 700, Y: 325}],angle:0},
+					{class:"tank", id: 4, movement : [{X: 700, Y: 450}, {X: 700, Y: 450}], angle:0},
+					{class:"tank", id: 1, movement : [{X: 650, Y: 325}, {X: 650, Y: 325}], angle:0},
+					{class:"tank", id: 2, movement : [{X: 650, Y: 450}, {X: 650, Y: 450}], angle:0},
+					{class:"tank", id: 3, movement : [ {X: 600, Y: 325}, {X: 600, Y: 525}],angle:-90},
+					{class:"tank", id: 4, movement : [ {X: 600, Y: 450}, {X: 600, Y: 750}],angle:-90},
+					{class:"tank", id: 1, movement :  [{X: 550, Y: 325}, {X: 550, Y: 525}],angle:-90},
+					{class:"tank", id: 2, movement :  [{X: 550, Y: 450}, {X: 550, Y: 750}],angle:-90}
 					]
 			}
 			,
@@ -71,14 +71,14 @@ var danceVar = {
 				duration : 5000,
 				descriptionId : 0,
 				path : [
-					{class:"tank", id: 3, movement : [{X: 700, Y: 325}, 	{X: 150, Y: 325}]	, rotation : 66.75},
-					{class:"tank", id: 4, movement : [{X: 700, Y: 450},	{X: 150, Y: 450}]	, rotation : 156.75},
-					{class:"tank", id: 1, movement : [{X: 650, Y: 325},	{X: 100, Y: 325}]	, rotation : 246.75},
-					{class:"tank", id: 2, movement : [{X: 650, Y: 450},	{X: 100, Y: 450}]	, rotation : 336.75},
-					{class:"tank", id: 3, movement : [ {X: 600, Y: 525}, {X: 50, Y: 525}]	, rotation : 22.25},
-					{class:"tank", id: 4, movement : [ {X: 600, Y: 750}, {X: 50, Y: 750}]	, rotation : 112.25},
-					{class:"tank", id: 1, movement : [ {X: 550, Y: 525}, {X: 0, Y: 525}]	, rotation : 202.25},
-					{class:"tank", id: 2, movement : [ {X: 550, Y: 750}, {X: 0, Y: 750}]	, rotation : 292.25}
+					{class:"tank", id: 3, movement : [{X: 700, Y: 325}, 	{X: 150, Y: 325}]	, 	angle:0},
+					{class:"tank", id: 4, movement : [{X: 700, Y: 450},	{X: 150, Y: 450}]	,		angle:0},
+					{class:"tank", id: 1, movement : [{X: 650, Y: 325},	{X: 100, Y: 325}]	,		angle:0},
+					{class:"tank", id: 2, movement : [{X: 650, Y: 450},	{X: 100, Y: 450}]	,		angle:0},
+					{class:"tank", id: 3, movement : [ {X: 600, Y: 525}, {X: 50, Y: 525}]	,		angle:0},
+					{class:"tank", id: 4, movement : [ {X: 600, Y: 750}, {X: 50, Y: 750}]	,		angle:0},
+					{class:"tank", id: 1, movement : [ {X: 550, Y: 525}, {X: 0, Y: 525}]	,		angle:0},
+					{class:"tank", id: 2, movement : [ {X: 550, Y: 750}, {X: 0, Y: 750}]	,		angle:0}
 					]
 			}
             ,
@@ -87,14 +87,14 @@ var danceVar = {
 				duration : 3000,
 				descriptionId : 1,
 				path : [
-					{class:"tank", id: 3, movement : [{X: 150, Y: 325},	{X: 150, Y: 0}], rotation : 156.75},
-					{class:"tank", id: 4, movement : [{X: 150, Y: 450},	{X: 150, Y: 20}],rotation : 246.75},
-					{class:"tank", id: 1, movement : [{X: 100, Y: 325},	{X: 100, Y: 0}],rotation : 336.75},
-					{class:"tank", id: 2, movement : [{X: 100, Y: 450},	{X: 100, Y: 20}], rotation : 66.75},
-					{class:"tank", id: 3, movement :[ {X: 50, Y: 525},	{X: 50, Y: 1000}], rotation : 112.25},
-					{class:"tank", id: 4, movement :[ {X: 50, Y: 750}, {X: 50, Y: 980}],rotation : 202.25},
-					{class:"tank", id: 1, movement :[ {X: 0, Y: 525}, 	{X: 0, Y: 1000}],rotation : 202.25},
-					{class:"tank", id: 2, movement :[ {X: 0, Y: 750}, 	{X: 0, Y: 980}], rotation : 22.25}
+					{class:"tank", id: 3, movement : [{X: 150, Y: 325},	{X: 150, Y: 0}], angle : 90},
+					{class:"tank", id: 4, movement : [{X: 150, Y: 450},	{X: 150, Y: 50}],angle : 90},
+					{class:"tank", id: 1, movement : [{X: 100, Y: 325},	{X: 100, Y: 0}],angle : 90},
+					{class:"tank", id: 2, movement : [{X: 100, Y: 450},	{X: 100, Y: 50}], angle : 90},
+					{class:"tank", id: 3, movement :[ {X: 50, Y: 525},	{X: 50, Y:950 }], angle : -90},
+					{class:"tank", id: 4, movement :[ {X: 50, Y: 750}, {X: 50, Y:1000 }],angle : -90},
+					{class:"tank", id: 1, movement :[ {X: 0, Y: 525}, 	{X: 0, Y: 950}],angle : -90},
+					{class:"tank", id: 2, movement :[ {X: 0, Y: 750}, 	{X: 0, Y:1000 }], angle : -90}
 					]
 			}
 		],
