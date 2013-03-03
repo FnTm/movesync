@@ -59,7 +59,13 @@ movesync.player = function() {
 	 * Initializes player
 	 */
 	initPlayer = function(movements, movementCallback) {
-		audioObject = $("audio")[0];	
+		audioObject = $("audio")[0];
+
+		var audioType = '.mp3';
+		if(!!audioObject.canPlayType('audio/ogg') === true){
+	        audioType = '.ogg' //For firefox and others who do not support .mp3
+	    }
+    	audioObject.setAttribute('src', 'assets/sudmalinas' + audioType);
 		
 		movementsArray = movements;
 		callbackFunction = movementCallback;
