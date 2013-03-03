@@ -13,27 +13,26 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="css/app.css" rel="stylesheet" media="screen">
 		<script src="scripts/jquery.min.js" type="text/javascript"></script>
-		<script src="scripts/ocanvas-2.4.0.min.js" type="text/javascript"></script>
 
 	</head>
- 	<body>
+	<body>
 	
 	<div class="container-fluid">
 
 	 <div class="row-fluid">
-	  <div class="logo span3">
-	   <a href="../index.html">
-	   	<img src="assets/logo-small.png"/>
-	   </a>
-	  </div>
-	  <div class="headInfo span9">
-	   <audio controls>
+		<div class="logo span3">
+		 <a href="../index.html">
+			<img src="assets/logo-small.png"/>
+		 </a>
+		</div>
+		<div class="headInfo span9">
+		 <audio controls>
 		 </audio>
-	  </div>
+		</div>
 	 </div>
 
 	</div>
-   
+	 
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span4">
@@ -47,11 +46,11 @@
 				 <div class="example">
 
 					 <div id="mygraphiccontainer">
-					 	<div id="playMessage" style="
-						    width: 200px;
-						    margin: 100px 200px;
-						    font-size: 30px;
-						    float:left
+						<div id="playMessage" style="
+								width: 200px;
+								margin: 100px 200px;
+								font-size: 30px;
+								float:left
 						">Press play</div>
 
 					 </div> <!-- Container for the preview of the curve line -->
@@ -74,31 +73,26 @@
 		</div>
 		<div id="connectDiv">
 			<a href="http://www.facebook.com/movesync.us" title="movesync.us on Facebook">
-				<img src="../img/feisbuks.png"	class="connectImg" />
+				<img src="../img/feisbuks.png"  class="connectImg" />
 			</a>
-			<a href="http://twitter.com/movesyncus"	title="movesync.us on Twitter">
-				<img src="../img/tviteris.png"	class="connectImg" />
+			<a href="http://twitter.com/movesyncus" title="movesync.us on Twitter">
+				<img src="../img/tviteris.png"  class="connectImg" />
 			</a>
-			<a href="http://youtube.com/movesyncus"	title="movesync.us on YouTube">
+			<a href="http://youtube.com/movesyncus" title="movesync.us on YouTube">
 				<img src="../img/youtube.png" class="connectImg" />
 			</a>
 		</div>
 		</div>
 	</footer>
 	
-    <script src="scripts/yui-min.js" type="text/javascript"></script>
-    <script src="scripts/yui/build/yahoo/yahoo-min.js" type="text/javascript"></script>
-		<script src="scripts/yui/build/event/event-min.js" type="text/javascript"></script>
+		<script src="scripts/yui-min.js" type="text/javascript"></script>
 
-
-    <script src="scripts/yui/build/animation/animation-min.js" type="text/javascript"></script>
-		<script src="scripts/yui/build/utilities/utilities.js" type="text/javascript"></script>
+		<script src="scripts/yui/build/animation/animation-min.js" type="text/javascript"></script>
+	<script src="scripts/yui/build/utilities/utilities.js" type="text/javascript"></script>
 	
-	<script src="js/jquery-1.9.1.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 
 	<script src="scripts/player.js"></script>
-	<script src="scripts/model.js"></script>
 	<script src="weheartgarage.js"></script>
 	<script src="dance.js"></script>
 
@@ -109,6 +103,11 @@
 
 	<script type="text/javascript">
 		var mover;
+
+		function setHighlight(highlighParam) {
+			
+		}
+
 		$(document).ready(function(){
 			//Empty at the begining
 
@@ -181,10 +180,10 @@
 
 			prepareStage = function() {
 				appendMovementsToDescrArea();
-		        //createDancers();
+						//createDancers();
 
-		        mover.createDancers(dance.dancers);
-		        //console.log("sd");
+						mover.createDancers(dance.dancers);
+						//console.log("sd");
 			}
 
 			var moverReadyCallback = function() {
