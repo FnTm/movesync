@@ -135,6 +135,10 @@ code span {
 
 footer {
 	border-top: 1px solid grey;
+	position: absolute;
+	bottom: 40px;
+	height: 25px;
+	width: 100%;
 }
 
 footer > * {
@@ -188,4 +192,8 @@ body {
 .findMe{
     background-color: #b22222;
 
+}
+
+.dataContainer {
+	height: 40%;
 }
