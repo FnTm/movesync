@@ -28,6 +28,10 @@ audio {
     height: 600px;
 }
 
+#mygraphiccontainer > * {
+    z-index: -1;
+}
+
 .example .demo {
     position: absolute;
     left: 92px;
@@ -218,4 +222,17 @@ body {
 .danceLogo  img{
 	width: 25%;
 	padding-top: 4%;
+}
+
+
+#playMessage {
+ 	width: 55%;
+    margin: 100px 5px;
+    font-size: 30px;
+    float:left;
+    z-index: 110;
+}
+
+#playMessage > div {
+	display: inline;
 }

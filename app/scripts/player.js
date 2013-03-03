@@ -73,7 +73,12 @@ movesync.player = function() {
 		setInterval(onTimeCheck, interval);
 	};
 	
+	play = function() {
+		audioObject.play();
+	}
+	
 	return {
-		"initPlayer"			: initPlayer
+		"initPlayer"			: initPlayer,
+		"play"					: play
 	}
 }();
