@@ -4,7 +4,7 @@ var danceVar = {
 			{class : "boy", id : 1}, {class : "boy", id : 2}, {class : "boy", id : 3}, {class : "boy", id : 4},
 			{class : "girl", id : 1}, {class : "girl", id : 2}, {class : "girl", id : 3}, {class : "girl", id : 4}],
 		frames : [
-			{	//Standing still till 3.5s
+			{	//Standing still still 3.5s
 				time : 0,
 				duration : 4000,
 				descriptionId : 0,
@@ -115,7 +115,27 @@ var danceVar = {
 					{class:"girl", id: 3, movement : [{X: 750, Y: 0}, {X: 375, Y: 125}], angle : 66.75},
 					{class:"girl", id: 4, movement : [{X: 0, Y: 250}, {X: 125, Y: 625}], angle : 336.75}
 					]
-			}
+			},
+
+
+			//SECONT MOVEMENT//
+			{	//3 polkas, 90 degrees in 3s
+				time : 17,
+				duration : 3000,
+				descriptionId : 2,
+				instructionId : 4,
+				path : [
+					{class:"boy", id: 1, movement : [{X: 750, Y: 1000}, {X: 875, Y: 625}], angle : 202.25},
+					{class:"boy", id: 2, movement : [{X: 1000, Y: 250}, {X: 625, Y: 125}], angle : 112.25},
+					{class:"boy", id: 3, movement : [{X: 250, Y: 0}, {X: 125, Y: 375}], angle : 22.25},
+					{class:"boy", id: 4, movement : [{X: 0, Y: 750}, {X: 375, Y: 875}], angle : 292.25},
+					{class:"girl", id: 1, movement : [{X: 250, Y: 1000}, {X: 625, Y: 875}], angle : 246.75},
+					{class:"girl", id: 2, movement : [{X: 1000, Y: 750}, {X: 875, Y: 375}], angle : 156.75},
+					{class:"girl", id: 3, movement : [{X: 750, Y: 0}, {X: 375, Y: 125}], angle : 66.75},
+					{class:"girl", id: 4, movement : [{X: 0, Y: 250}, {X: 125, Y: 625}], angle : 336.75}
+					]
+			},
+
 		],
 		description : 	[
 			{
