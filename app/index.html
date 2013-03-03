@@ -107,8 +107,19 @@
 		$(document).ready(function(){
 			//Empty at the begining
 
+			var hash = window.location.hash;
+
 			//danceVar
-			var dance = window.location.hash ? weHeartGarage : danceVar;
+			var dance = hash == '#sdf' ? weHeartGarage : danceVar;
+
+			var dancerType, dancerId;
+			if (hash != '#sdf') {
+				var splits = (hash.substring(1, hash.length)).split(',');
+				if (splits[0] && splits[0].length > 0)
+					dancerType = splits[0];
+				if (splits[1] && splits[1].length > 0)
+					dancerId = splits[1];
+			}
 
 			getFramesArray = function() {
 				var movementsArray = [];
@@ -173,6 +184,14 @@
 
 			var moverReadyCallback = function() {
 				prepareStage();
+
+				if (dancerType || dancerId) {
+					var res = $.grep(mover.dancerIds, function(e){ return (!dancerType ^ e.type == dancerType) && (!dancerId ^ e.outterId == parseInt(dancerId))});
+
+					for (var i = 0; i < res.length; i++) {
+						$(res[i].id).addClass('dancer-highlight');
+					}
+				}
 			}
 
 			mover = new Mover("mygraphiccontainer", ".example", moverReadyCallback);

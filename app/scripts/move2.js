@@ -33,7 +33,7 @@ function Mover(graphicContainerId, canvasId, isReadyCallback) {
 					var rad = v * deg2radians ;
 					var costheta = Math.cos(rad);
 					var sintheta = Math.sin(rad);
-
+ 
 					var m11 = costheta;
 					var m12 = -sintheta;
 					var m21 = sintheta;
@@ -51,6 +51,7 @@ function Mover(graphicContainerId, canvasId, isReadyCallback) {
 	var createDancer = function(id, type, order) {
 		dancerIds.push( {
 			id : "#dancer-" + order,
+			outterId : id,
 			X : -1,
 			Y : -1,
 			obj : null,

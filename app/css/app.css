@@ -2,6 +2,10 @@ div.highlight, div.instruction-active{
 	background:#AAAAFF;
 }
 
+div.dancer-highlight {
+    border: solid red;
+}
+
 audio {
 	width: 100%;
 
@@ -158,13 +162,8 @@ body {
     position: absolute;
     left: -1000px;
     top: -1000px;
-    /*background-color: #f00;*/
     text-align: center;
     line-height: 1.5em;
-    /*border: solid 1px #cc0000;*/
-    /*            border-radius: 0;
-                -moz-box-shadow: 3px 3px 7px rgba(0,0,0,0.4);
-                -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.4);*/
     width: 50px;
     height: 30px;
     background-size:cover;
@@ -204,6 +203,7 @@ body {
 	top: 10px;
 	right: 10px;
 }
+
 .connectImg {
 	width: 32px;
 	height: 32px;
@@ -214,6 +214,7 @@ body {
 .mainLogo {
 	padding-top: 5%;
 }
+
 .danceLogo  img{
 	width: 25%;
 	padding-top: 4%;
