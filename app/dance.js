@@ -132,7 +132,7 @@ var danceVar = {
 						id : 2,
 						from : 7,
 						to : 8,
-						text : "Dancers, standing towards center of the circle release the hands and clap their hands 3 times"
+						text : "Dancers, standing towards center of the circle release the hands and <a class='youtube' rel='efD4jEqqiuk' href='#'>clap</a> their hands 3 times"
 					},
 					{
 						id : 3,
@@ -150,7 +150,7 @@ var danceVar = {
 						id : 4,
 						from : 1,
 						to : 8,
-						text : "First half of pairs with waist-shoulder grasp dance the round polka towards center. When danced halfcircle around each other they return in their initial places"
+						text : "First half of pairs with <a class='youtube' rel='sgeZV60MtxM' href='#'>waist-shoulder</a> grasp dance the round polka towards center. When danced halfcircle around each other they return in their initial places"
 					},
 					{
 						id : 5,
