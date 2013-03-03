@@ -37,11 +37,11 @@
 		<div class="row-fluid">
 			<div class="span4">
 				<div class="row-fluid">
-					<a id="highlight-boys" class="btn btn-primary" href="#" click="return 0;">Highlight all boys</a>
-					<a id="highlight-girls" class="btn btn-primary" href="#" click="return 0;">Highlight all girls</a>
-					<a id="highlight-boy-1" class="btn btn-primary" href="#" click="return 0;">Highlight 1st boy</a>
-					<a id="highlight-girl-3" class="btn btn-primary" href="#" click="return 0;">Highlight 3rd girl</a>
-					<a id="highlight-pair-2" class="btn btn-primary" href="#" click="return 0;">Highlight 2nd pair</a>
+					<a id="highlight-boys" class="btn btn-primary highlight-button" href="#" click="return 0;">Highlight all boys</a>
+					<a id="highlight-girls" class="btn btn-primary highlight-button" href="#" click="return 0;">Highlight all girls</a>
+					<a id="highlight-boy-1" class="btn btn-primary highlight-button" href="#" click="return 0;">Highlight 1st boy</a>
+					<a id="highlight-girl-3" class="btn btn-primary highlight-button" href="#" click="return 0;">Highlight 3rd girl</a>
+					<a id="highlight-pair-2" class="btn btn-primary highlight-button" href="#" click="return 0;">Highlight 2nd pair</a>
 				</div>
 				<div id="movesync-description" style="height:600px;">
 			 		<div class="row-fluid songName"> Sudmaliņas </div> 
@@ -126,6 +126,10 @@
 					dancerType = splits[0];
 				if (splits[1] && splits[1].length > 0)
 					dancerId = splits[1];
+			}
+			else
+			{
+				$(".highlight-button").hide();
 			}
 		}
 
