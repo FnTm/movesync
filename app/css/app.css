@@ -208,6 +208,12 @@ body {
 	right: 10px;
 }
 
+#tankDiv {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
 .connectImg {
 	width: 32px;
 	height: 32px;

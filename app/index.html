@@ -28,6 +28,13 @@
 		<div class="headInfo span9">
 		 <audio controls>
 		 </audio>
+		 <div class="row-fluid" style="font-size:14px; margin-top:10px;">
+					<a id="highlight-boys" class="highlight-button" style="font-weight:bold; padding-right:1em;" click="return 0;">Highlight all boys</a>
+					<a id="highlight-girls" class="highlight-button" style="font-weight:bold; padding-right:1em;" click="return 0;">Highlight all girls</a>
+					<a id="highlight-boy-1" class="highlight-button" style="font-weight:bold; padding-right:1em;" click="return 0;">Highlight 1st boy</a>
+					<a id="highlight-girl-3" class="highlight-button" style="font-weight:bold; padding-right:1em;" click="return 0;">Highlight 3rd girl</a>
+					<a id="highlight-pair-2" class="highlight-button" style="font-weight:bold; padding-right:1em;" click="return 0;">Highlight 2nd pair</a>
+				</div>
 		</div>
 	 </div>
 
@@ -36,7 +43,6 @@
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span4">
-				<div><a id="highlight-boys" href="#boy," click="javascript:setHighlight()">Highlight all boys</a></div>
 				<div id="movesync-description" style="height:600px;">
 			 		<div class="row-fluid songName"> Sudmaliņas </div> 
 
@@ -67,6 +73,9 @@
 				<small>movesync.us is a kick-ass project made at Garage48
 					in Minsk</small>
 			</p>
+		</div>
+		<div id="tankDiv">
+			<img src="assets/tank_version.png" id="navToTanks"/>
 		</div>
 		<div id="connectDiv">
 			<a href="http://www.facebook.com/movesync.us" title="movesync.us on Facebook">
@@ -104,15 +113,21 @@
 		var dancerType, dancerId;
 
 		function setHighlight(highlighParam) {
-			//window.location.hash = highlighParam;
+			window.location.hash = highlighParam;
 
 			readHashParams();
+
+
+			$('.dancer-highlight').removeClass('dancer-highlight');
 
 			highlightDancers();
 		}
 
 		function readHashParams() {
 			hash = window.location.hash;
+
+			dancerType = null;
+			dancerId = null;
 
 			if (hash != '#sdf') {
 				var splits = (hash.substring(1, hash.length)).split(',');
@@ -121,21 +136,46 @@
 				if (splits[1] && splits[1].length > 0)
 					dancerId = splits[1];
 			}
+			else
+			{
+				$(".highlight-button").hide();
+			}
 		}
 
 		function highlightDancers () {
 			if (dancerType || dancerId) {
-				$('.dancer-highlight').removeClass('dancer-highlight');
 
 				var res = $.grep(mover.dancerIds, function(e){ return (!dancerType ^ e.type == dancerType) && (!dancerId ^ e.outterId == parseInt(dancerId))});
 
-				for (var i = 0; i < res.length; i++) {
-					$(res[i].id).addClass('dancer-highlight');
+				console.log(res.length);
+				for (var iii = 0; iii < res.length; iii++) {
+					console.log(res[iii].id);
+					$(res[iii].id).addClass('dancer-highlight');
 				}
 			}
 		}
 
 		$(document).ready(function(){
+			$('#highlight-boys').click(function(a, b){
+				setHighlight('boy,')
+			});
+			$('#highlight-girls').click(function(a, b){
+				setHighlight('girl,')
+			});
+			$('#highlight-boy-1').click(function(a, b){
+				setHighlight('boy,1')
+			});
+			$('#highlight-girl-3').click(function(a, b){
+				setHighlight('girl,3')
+			});
+			$('#highlight-pair-2').click(function(a, b){
+				setHighlight(',2')
+			});
+			$('#navToTanks').click(function(a, b){
+				window.location.hash="sdf";
+				location.reload();
+			});
+
 			//Empty at the begining
 
 			readHashParams();
