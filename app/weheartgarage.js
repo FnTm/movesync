@@ -8,6 +8,8 @@ var weHeartGarage = {
 				time : 0,
 				duration : 2000,
 				descriptionId : 0,
+				instructionId : 1,
+
 				path : [
 					{class:"tank", id: 1, movement : [{X: 900, Y: 450}, {X: 900, Y: 450}], angle:0},
 					{class:"tank", id: 2, movement : [{X: 900, Y: 550}, {X: 900, Y: 550}], angle:0},
@@ -22,7 +24,8 @@ var weHeartGarage = {
 			{
 				time : 2,
 				duration : 2000,
-				descriptionId : 1,
+								descriptionId : 0,
+				instructionId : 1,
 				path : [
                     {class:"tank", id: 1, movement : [{X: 900, Y: 450}, {X: 800, Y: 450}], angle:0},
                     {class:"tank", id: 2, movement : [{X: 900, Y: 550}, {X: 800, Y: 550}], angle:0},
@@ -37,7 +40,8 @@ var weHeartGarage = {
 			{
 				time : 4,
 				duration : 2000,
-				descriptionId : 0,
+								descriptionId : 0,
+				instructionId : 2,
 				path : [
 					{class:"tank", id: 3, movement : [ {X: 800, Y: 450}, {X: 700, Y: 325}],angle:45},
 					{class:"tank", id: 4, movement : [{X: 800, Y: 550}, {X: 700, Y: 450}], angle:45},
@@ -53,7 +57,8 @@ var weHeartGarage = {
 			{
 				time : 6,
 				duration : 2000,
-				descriptionId : 0,
+								descriptionId : 0,
+				instructionId : 2,
 				path : [
 					{class:"tank", id: 3, movement : [ {X: 700, Y: 325}, {X: 700, Y: 325}],angle:0},
 					{class:"tank", id: 4, movement : [{X: 700, Y: 450}, {X: 700, Y: 450}], angle:0},
@@ -69,7 +74,8 @@ var weHeartGarage = {
 			{
 				time : 8,
 				duration : 5000,
-				descriptionId : 0,
+								descriptionId : 0,
+				instructionId : 2,
 				path : [
 					{class:"tank", id: 3, movement : [{X: 700, Y: 325}, 	{X: 150, Y: 325}]	, 	angle:0},
 					{class:"tank", id: 4, movement : [{X: 700, Y: 450},	{X: 150, Y: 450}]	,		angle:0},
@@ -85,7 +91,8 @@ var weHeartGarage = {
 			{
 				time : 13,
 				duration : 3000,
-				descriptionId : 1,
+								descriptionId : 0,
+				instructionId : 2,
 				path : [
 					{class:"tank", id: 3, movement : [{X: 150, Y: 325},	{X: 150, Y: 0}], angle : 90},
 					{class:"tank", id: 4, movement : [{X: 150, Y: 450},	{X: 150, Y: 50}],angle : 90},
@@ -101,38 +108,22 @@ var weHeartGarage = {
 		description : 	[
 			{
 				id : 0,
-				name : "1st movement",
+				name : "Parade",
 				instructions : [
 					{
 						from : 1,
-						to : 6,
-						text : "Dancers take each other by hand and form a circle. Starting with right feet with 6 polkas dancers move the circle counterclockwise"
+						to : 2,
+						text : "Drive forward"
 					},
 					{
-						from : 7,
-						to : 8,
-						text : "Dancers, standing towards center of the circle release the hands and clap their hands 3 times"
+						from : 3,
+						to : 4,
+						text : "Seperate in 2 groups"
 					},
 					{
-						from : 9,
+						from : 5,
 						to : 16,
-						text : "Dancers repeat same actions from beat 1-8, but moving the circle clockwise. At the beat 16 form a square"
-					}
-				]
-			},
-			{
-				id : 1,
-				name : "2nd movement",
-				instructions : [
-					{
-						from : 1,
-						to : 8,
-						text : "First half of pairs with waist-shoulder grasp dance the round polka towards center. When danced halfcircle around each other they return in their initial places"
-					},
-					{
-						from : 9,
-						to : 16,
-						text : "Dancers repeat same actions as in beat 1-8, but moving the circle clockwise. At the beat 16 they form a square"
+						text : "Move forward"
 					}
 				]
 			}
