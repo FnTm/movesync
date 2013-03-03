@@ -39,7 +39,15 @@
 			<div class="span8">
 				 <div class="example">
 
-					 <div id="mygraphiccontainer"></div> <!-- Container for the preview of the curve line -->
+					 <div id="mygraphiccontainer">
+					 	<div id="playMessage" style="
+						    width: 200px;
+						    margin: 100px 200px;
+						    font-size: 30px;
+						    float:left
+						">Press play</div>
+
+					 </div> <!-- Container for the preview of the curve line -->
 
 				 </div>
 			 </div>
@@ -115,6 +123,8 @@
 				var movement = dance.frames[param];
 
 				mover.doFrame(movement);
+
+				$("#playMessage").remove();
 			};
 
 			appendMovementsToDescrArea = function() {
