@@ -2,6 +2,10 @@ div.highlight, div.instruction-active{
 	background:#AAAAFF;
 }
 
+div.dancer-highlight {
+    border: solid red;
+}
+
 audio {
 	width: 100%;
 

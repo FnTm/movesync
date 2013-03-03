@@ -182,7 +182,23 @@ var danceVar = {
 					{class:"girl", id: 3, movement : [{X: 125, Y: 625}, {X: 250, Y: 625}], angle : 270},
 					{class:"girl", id: 4, movement : [{X: 375, Y: 375}, {X: 250, Y: 375}], angle : 90}
 					]
-			},
+			}/*
+			{	//forming little windmills, moving 90 degrees
+				time : 22,
+				duration : 1000,
+				descriptionId : 2,
+				instructionId : 4,
+				path : [
+					{class:"boy", id: 4, movement : [{X: 625, Y: 625}, {X: 750, Y: 625}], angle : 270},
+					{class:"boy", id: 3, movement : [{X: 875, Y: 375}, {X: 750, Y: 375}], angle : 90},
+					{class:"girl", id: 6, movement : [{X: 375, Y: 625}, {X: 375, Y: 500}], angle : 180},
+					{class:"girl", id: 5, movement : [{X: 125, Y: 375}, {X: 125, Y: 500}], angle : 0},
+					{class:"girl", id: 8, movement : [{X: 625, Y: 375}, {X: 625, Y: 500}], angle : 0},
+					{class:"girl", id: 7, movement : [{X: 875, Y: 625}, {X: 875, Y: 500}], angle : 180},
+					{class:"boy", id: 1, movement : [{X: 125, Y: 625}, {X: 250, Y: 625}], angle : 270},
+					{class:"boy", id: 2, movement : [{X: 375, Y: 375}, {X: 250, Y: 375}], angle : 90}
+					]
+			},*/
 
 		],
 		description : 	[
