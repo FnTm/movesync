@@ -58,10 +58,12 @@
  </div>
 	 </div>
 	</footer>
-  <script src="scripts/movesync.js" type="text/javascript"></script>
-		<script src="scripts/yui-min.js" type="text/javascript"></script>
+    <script src="scripts/yui-min.js" type="text/javascript"></script>
+    <script src="scripts/yui/build/yahoo/yahoo-min.js" type="text/javascript"></script>
 		<script src="scripts/yui/build/event/event-min.js" type="text/javascript"></script>
-		<script src="scripts/yui/build/animation/animation-min.js" type="text/javascript"></script>
+
+
+    <script src="scripts/yui/build/animation/animation-min.js" type="text/javascript"></script>
 		<script src="scripts/yui/build/utilities/utilities.js" type="text/javascript"></script>
 	
 	<script src="js/jquery-1.9.1.js"></script>
@@ -103,7 +105,7 @@
 				highlighStep(param);
 				var movement = dance.frames[param];
 
-				console.log(movement);
+				//console.log(movement);
 				mover.doFrame(movement);
 			};
 
@@ -132,7 +134,7 @@
 		        //createDancers();
 
 		        mover.createDancers(dance.dancers);
-		        console.log("sd");
+		        //console.log("sd");
 			}
 
 			var moverReadyCallback = function() {
