@@ -210,3 +210,11 @@ body {
 	border-radius: 4px;
 	box-shadow: 1px 1px 2px 2px #ddd;
 }
+
+.mainLogo {
+	padding-top: 5%;
+}
+.danceLogo  img{
+	width: 25%;
+	padding-top: 4%;
+}
