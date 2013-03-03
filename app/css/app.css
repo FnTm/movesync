@@ -302,3 +302,17 @@ body {
 .aboutDiv > a {
 	color: grey;
 }
+.dataContainer {
+	min-height: 800px;
+	height: 800px;
+}
+.dataContainerImg {
+	padding-top: 2%;
+}
+.cntr {
+	text-align: center;
+}
+
+.lastImg {
+	padding-bottom: 3%;
+}
