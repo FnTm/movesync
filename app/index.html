@@ -31,7 +31,7 @@
 		<div class="row-fluid">
 			<div class="span4">
 			
-				<div id="movesync-description" style="overflow:scroll; height:600px;">
+				<div id="movesync-description" style="height:600px;">
 			 <div class="row-fluid songName"> Sudmaliņas </div> 
 
 				</div>
@@ -114,10 +114,6 @@
 				//highlighStep(param);
 				highlightInstruction(param);
 				var movement = dance.frames[param];
-
-				//console.log(movement);
-				mover.doFrame(movement);
-			};
 
 			appendMovementsToDescrArea = function() {
 				var mainPlaceholder = $("#movesync-description");
