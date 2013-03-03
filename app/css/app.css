@@ -35,8 +35,8 @@ audio {
     /*            border-radius: 0;
                 -moz-box-shadow: 3px 3px 7px rgba(0,0,0,0.4);
                 -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.4);*/
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 30px;
     background-size:cover;
 }
 
@@ -146,7 +146,7 @@ footer > * {
 }
 
 body {
-	background-color: rgba(0, 0, 0, 0.04);
+	background-color: #F0F0F0;
 }
 
 .dancer{
@@ -160,8 +160,8 @@ body {
     /*            border-radius: 0;
                 -moz-box-shadow: 3px 3px 7px rgba(0,0,0,0.4);
                 -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.4);*/
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 30px;
     background-size:cover;
 }
 .boy{
@@ -172,7 +172,14 @@ body {
     background-image: url("../assets/v.png");
 
 }
-
+.tank{
+    background-image: url("../assets/tank.png");
+    
+}
+.example .dancer .tank{
+    width: 50px;
+    height: 30px;
+}
 
 .songName {
  font-size: 1.9em;

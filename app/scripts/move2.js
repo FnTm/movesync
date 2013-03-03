@@ -112,11 +112,15 @@ function Mover(graphicContainerId, canvasId, isReadyCallback) {
 
 		dancerObj.anim.set('to', {
 			curve: otherPoints,
+
 			rotate : angle - dancerObj.angle >= 180 ? angle - 360 : angle
+
 		});
 
 		dancerObj.anim.set('from', {
+
 			rotate : dancerObj.angle - angle >= 180 ? dancerObj.angle - 360 : dancerObj.angle
+
 		});
 
 		dancerObj.anim.on("end",function(){
