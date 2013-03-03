@@ -36,9 +36,9 @@
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="span4">
-			
+				<div><a id="highlight-boys" href="#boy," click="javascript:setHighlight()">Highlight all boys</a></div>
 				<div id="movesync-description" style="height:600px;">
-			 <div class="row-fluid songName"> Sudmaliņas </div> 
+			 		<div class="row-fluid songName"> Sudmaliņas </div> 
 
 				</div>
 			</div>
@@ -103,20 +103,20 @@
 
 	<script type="text/javascript">
 		var mover;
+		var hash;
+		var dancerType, dancerId;
 
 		function setHighlight(highlighParam) {
-			
+			//window.location.hash = highlighParam;
+
+			readHashParams();
+
+			highlightDancers();
 		}
 
-		$(document).ready(function(){
-			//Empty at the begining
+		function readHashParams() {
+			hash = window.location.hash;
 
-			var hash = window.location.hash;
-
-			//danceVar
-			var dance = hash == '#sdf' ? weHeartGarage : danceVar;
-
-			var dancerType, dancerId;
 			if (hash != '#sdf') {
 				var splits = (hash.substring(1, hash.length)).split(',');
 				if (splits[0] && splits[0].length > 0)
@@ -124,6 +124,26 @@
 				if (splits[1] && splits[1].length > 0)
 					dancerId = splits[1];
 			}
+		}
+
+		function highlightDancers () {
+			if (dancerType || dancerId) {
+				$('.dancer-highlight').removeClass('dancer-highlight');
+
+				var res = $.grep(mover.dancerIds, function(e){ return (!dancerType ^ e.type == dancerType) && (!dancerId ^ e.outterId == parseInt(dancerId))});
+
+				for (var i = 0; i < res.length; i++) {
+					$(res[i].id).addClass('dancer-highlight');
+				}
+			}
+		}
+
+		$(document).ready(function(){
+			//Empty at the begining
+
+			readHashParams();
+
+			var dance = hash == '#sdf' ? weHeartGarage : danceVar;
 
 			getFramesArray = function() {
 				var movementsArray = [];
@@ -189,13 +209,7 @@
 			var moverReadyCallback = function() {
 				prepareStage();
 
-				if (dancerType || dancerId) {
-					var res = $.grep(mover.dancerIds, function(e){ return (!dancerType ^ e.type == dancerType) && (!dancerId ^ e.outterId == parseInt(dancerId))});
-
-					for (var i = 0; i < res.length; i++) {
-						$(res[i].id).addClass('dancer-highlight');
-					}
-				}
+				highlightDancers();
 			}
 
 			mover = new Mover("mygraphiccontainer", ".example", moverReadyCallback);

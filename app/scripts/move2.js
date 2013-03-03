@@ -95,7 +95,6 @@ function Mover(graphicContainerId, canvasId, isReadyCallback) {
 				var newY = path[i].movement[j].Y / 1000 * height + topLeft[1];
 				pointPath.push([newX, newY]);
 			}
-			console.log(path[i].angle);
 ;			doAnimationOnDancer(dancerIds[i], pointPath, frame.duration, path[i].angle);
 		}
 	}
