@@ -35,7 +35,7 @@ audio {
     /*            border-radius: 0;
                 -moz-box-shadow: 3px 3px 7px rgba(0,0,0,0.4);
                 -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.4);*/
-    width: 50px;
+    width: 30px;
     height: 30px;
     background-size:cover;
 }
