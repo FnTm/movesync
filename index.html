@@ -31,7 +31,7 @@
 			</p>
 		</div>
 		<div class="aboutDiv">
-			<a href="app/team.html">Anout Us</a>
+			<a href="app/team.html">About Us</a>
 		</div>
 		<div id="connectDiv">
 			<a href="http://www.facebook.com/movesync.us" title="movesync.us on Facebook">
@@ -46,21 +46,20 @@
 		</div>
 		</div>
 	</footer>
-
 <script type="text/javascript">
+if (window.location.hostname == "movesync.us")
+{
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38997354-1']);
+  _gaq.push(['_trackPageview']);
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-38976708-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+}
 </script>
-
-
+>>>>>>> gh-pages
 </body>
 </html>

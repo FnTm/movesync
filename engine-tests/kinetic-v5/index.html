@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>moveSync.us - dance</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div class="container-fluid">
+			 <audio controls>
+			 </audio>
+		</div>
+		 
+		<div id="container" width="500" height="500"></div>
+
+		<script src="../jquery.min.js" type="text/javascript"></script>
+		<script src="../player.js"></script>
+		<script src="http://www.html5canvastutorials.com/libraries/kinetic-v4.3.0-beta2.js"></script>
+		<script type="text/javascript">
+			var RADIUS = 450;
+
+			var stage;
+
+			var layer;
+
+			var animation;
+
+			var objects = {};
+
+			function changeGroup(object, to) {
+				var coordinates = object.getAbsolutePosition();
+				to.add(object);
+				object.setAbsolutePosition(coordinates);
+			}
+
+			function resetRotation(rotation) {
+				var tmp = rotation%360;
+
+				if (tmp < -180)
+					tmp = tmp + 360;
+				if (tmp > 180)
+					tmp = tmp - 360;
+				
+				return tmp;
+			}
+
+			var setAnimation = function(f) {
+				if (animation)
+					animation.stop();
+
+				animation = new Kinetic.Animation(f, layer);
+
+				animation.start();
+			}
+
+			var setFrame = function(time) {
+				switch(time) {
+					case 0:
+						{
+							for (var i = 0; i < 8; i++) {
+								var deg = Math.PI / 4 * i + Math.PI / 16;
+								objects["boy" + (i + 1)].setPosition({x:Math.sin(deg) * RADIUS + 500, y:Math.cos(deg) * RADIUS + 500});
+								objects["boy" + (i + 1)].setRotation( -deg - Math.PI/2);
+							}
+							var cc = Math.PI / 8;
+							for (var i = 0; i < 8; i++) {
+								var deg = Math.PI / 4 * i + Math.PI / 16 * 3;
+								objects["girl" + (i + 1)].setPosition({x:Math.sin(deg) * RADIUS + 500, y:Math.cos(deg) * RADIUS + 500});
+								objects["girl" + (i + 1)].setRotation(-deg - Math.PI/2);
+							}
+						}
+						break;
+					case 1:
+						{
+							objects["group1"].transitionTo({
+								rotation : -Math.PI,
+								duration : 6
+							});
+						}
+						break;
+					case 2:
+						{
+							for (var i = 1; i <= 8; i++) {
+								objects["boy" + i].transitionTo({
+									rotation : objects["boy" + i].getRotation() - Math.PI,
+									duration : 2
+							 	});
+								objects["girl" + i].transitionTo({
+									rotation : objects["girl" + i].getRotation() - Math.PI,
+									duration : 2
+							 	});
+							}
+						}
+						break;
+					case 3:
+						{
+							objects["group1"].transitionTo({
+								rotation : 0,
+								duration : 6
+							});
+						}
+						break;
+					case 4:
+						{
+							for (var i = 1; i <= 8; i++) {
+								objects["boy" + i].setRotation(resetRotation(objects["boy" + i].getRotation()));
+								objects["girl" + i].setRotation(resetRotation(objects["girl" + i].getRotation()));
+							}
+
+						 	objects["boy1"].transitionTo({
+						 		x:630,
+						 		y:900,
+						 		rotation:Math.PI * -2/4,
+								duration : 2
+						 	});
+						 	objects["girl1"].transitionTo({
+						 		x:670,
+						 		y:900,
+						 		rotation:Math.PI * -6/4,
+								duration : 2
+							});
+						 	objects["boy2"].transitionTo({
+						 		x:900,
+						 		y:700,
+						 		rotation:Math.PI * -6/4,
+								duration : 2
+							});
+						 	objects["girl2"].transitionTo({
+						 		x:900,
+						 		y:600,
+						 		rotation:Math.PI * 2/4,
+								duration : 2
+							});
+
+						 	objects["boy3"].transitionTo({
+						 		x:900,
+						 		y:400,
+						 		rotation:Math.PI * -6/4,
+								duration : 2
+						 	});
+						 	objects["girl3"].transitionTo({
+						 		x:900,
+						 		y:300,
+						 		rotation:Math.PI * -6/4,
+								duration : 2
+							});
+						 	objects["boy4"].transitionTo({
+						 		x:670,
+						 		y:100,
+						 		rotation:Math.PI * -6/4,
+								duration : 2
+							});
+						 	objects["girl4"].transitionTo({
+						 		x:630,
+						 		y:100,
+						 		rotation:Math.PI * -10/4,
+								duration : 2
+							});
+
+						 	objects["boy5"].transitionTo({
+						 		x:370,
+						 		y:100,
+						 		rotation:Math.PI * -6/4,
+								duration : 2
+						 	});
+						 	objects["girl5"].transitionTo({
+						 		x:330,
+						 		y:100,
+						 		rotation:Math.PI * -10/4,
+								duration : 2
+							});
+						 	objects["boy6"].transitionTo({
+						 		x:100,
+						 		y:300,
+						 		rotation:Math.PI * -10/4,
+								duration : 2
+							});
+						 	objects["girl6"].transitionTo({
+						 		x:100,
+						 		y:400,
+						 		rotation:Math.PI * -10/4,
+								duration : 2
+							});
+
+						 	objects["boy7"].transitionTo({
+						 		x:100,
+						 		y:600,
+						 		rotation:Math.PI * -10/4,
+								duration : 2
+						 	});
+						 	objects["girl7"].transitionTo({
+						 		x:100,
+						 		y:700,
+						 		rotation:Math.PI * -10/4,
+								duration : 2
+							});
+						 	objects["boy8"].transitionTo({
+						 		x:330,
+						 		y:900,
+						 		rotation:Math.PI * -10/4,
+								duration : 2
+							});
+						 	objects["girl8"].transitionTo({
+						 		x:370,
+						 		y:900,
+						 		rotation:Math.PI * -14/4,
+								duration : 2
+							});
+						}
+						break;
+					case 5:
+						{
+							var dur = 2;
+
+							function group(i) {
+								var avgx = (objects["boy"+i].getX() + objects["girl"+i].getX())/2;
+								var avgy = (objects["boy"+i].getY() + objects["girl"+i].getY())/2;
+
+								objects["group2-"+i] = new Kinetic.Group({
+									x : avgx,
+									y : avgy,
+									rotationDeg: 0,
+									offset : [avgx,avgy]
+								});
+
+								layer.add(objects["group2-"+i]);
+
+								changeGroup(objects["boy"+i], objects["group2-"+i]);
+								changeGroup(objects["girl"+i], objects["group2-"+i]);
+
+							}
+
+							group("1");
+							group("4");
+							group("5");
+							group("8");
+
+							objects["group2-1"].transitionTo({
+								x : 750,
+								y : 500,
+								rotation : 2 * Math.PI,
+								duration : dur
+							});
+
+							objects["group2-4"].transitionTo({
+								x : 600,
+								y : 500,
+								rotation : 2 * Math.PI,
+								duration : dur
+							});
+
+							objects["group2-5"].transitionTo({
+								x : 250,
+								y : 500,
+								rotation : 2 * Math.PI,
+								duration : dur
+							});
+
+							objects["group2-8"].transitionTo({
+								x : 400,
+								y : 500,
+								rotation : 2 * Math.PI,
+								duration : dur
+							});
+						}
+						break;
+					case 6:
+						{
+							var avgx = (objects["group2-1"].getX() + objects["group2-4"].getX())/2;
+							var avgy = (objects["group2-1"].getY() + objects["group2-4"].getY())/2;
+
+							console.log(avgx, avgy);
+
+							objects["group2-14"] = new Kinetic.Group({
+								x : avgx,
+								y : avgy,
+								rotationDeg: 0,
+								offset : [avgx,avgy]
+							});
+
+							layer.add(objects["group2-14"]);
+
+							objects["group2-14"].add(objects["group2-1"]);
+							objects["group2-14"].add(objects["group2-4"]);
+
+							objects["group2-14"].transitionTo({
+								rotation : - Math.PI,
+								duration : 2
+							});
+
+							avgx = (objects["group2-5"].getX() + objects["group2-8"].getX())/2;
+							avgy = (objects["group2-5"].getY() + objects["group2-8"].getY())/2;
+
+							objects["group2-58"] = new Kinetic.Group({
+								x : avgx,
+								y : avgy,
+								rotationDeg: 0,
+								offset : [avgx,avgy]
+							});
+
+							layer.add(objects["group2-58"]);
+
+							objects["group2-58"].add(objects["group2-5"]);
+							objects["group2-58"].add(objects["group2-8"]);
+
+							objects["group2-58"].transitionTo({
+								rotation : - Math.PI,
+								duration : 2
+							});
+
+
+							var dur = 2
+							var rot = 5 * Math.PI; //Te jau bija 2PI, jāliek vel klat
+
+							objects["group2-1"].transitionTo({
+								rotation : rot,
+								duration : dur
+							});
+
+							objects["group2-4"].transitionTo({
+								rotation : rot,
+								duration : dur
+							});
+
+							objects["group2-5"].transitionTo({
+								rotation : rot,
+								duration : dur
+							});
+
+							objects["group2-8"].transitionTo({
+								rotation : rot,
+								duration : dur
+							});
+						}
+						break;
+					case 7:
+						{
+							changeGroup(objects["group2-1"], objects["group1"]);
+							changeGroup(objects["group2-4"], objects["group1"]);
+							changeGroup(objects["group2-5"], objects["group1"]);
+							changeGroup(objects["group2-8"], objects["group1"]);
+
+							var rot = 7 * Math.PI;
+							var dur = 2;
+
+							objects["group2-1"].transitionTo({
+								x : 650,
+								y : 900,
+								rotation : rot,
+								duration : dur
+							});
+
+							objects["group2-4"].transitionTo({
+								x : 650,
+								y : 100,
+								rotation : rot,
+								duration : dur
+							});
+
+							objects["group2-5"].transitionTo({
+								x : 350,
+								y : 100,
+								rotation : rot,
+								duration : dur
+							});
+
+							objects["group2-8"].transitionTo({
+								x : 350,
+								y : 900,
+								rotation : rot,
+								duration : dur
+							});
+						}
+						break;
+				}
+				console.log(time);
+			}
+
+			$(document).ready(function(){
+				movesync.player.initPlayer([1,3,9,11,17,19,21,23], setFrame);
+
+				stage = new Kinetic.Stage({
+					container: 'container',
+					width: 1000,
+					height: 1000//,
+					//scale: {x : 0.5, y : 0.5}
+				});
+
+				layer = new Kinetic.Layer();
+
+				stage.add(layer);
+
+				//setAnimation(function(frame) {console.log('me')});
+
+				{
+					var group = new Kinetic.Group({
+						x: 500,
+						y: 500,
+						rotationDeg: 0,
+						offset : [500,500]
+					});
+
+					var imageBoy = new Image();
+					imageBoy.src = 'v.png';
+
+					for (var i = 0; i < 8; i++) {
+						objects["boy" + (i + 1)] = new Kinetic.Image({
+							x: 500,
+							y: 500,
+							width: 50,
+							height: 50,
+							image: imageBoy,
+							fill: i == 0 ? 'green' : null,
+							//stroke: 'black',
+							//strokeWidth: 4,
+							offset  : [25, 25]
+						});
+
+						group.add(objects["boy" + (i + 1)]);
+					}
+
+					var imageGirl = new Image();
+					imageGirl.src = 'u.png';
+
+					for (var i = 0; i < 8; i++) {
+						objects["girl" + (i + 1)] = new Kinetic.Image({
+							x: 500,
+							y: 500,
+							width: 50,
+							height: 50,
+							image: imageGirl,
+							fill: i == 0 ? 'green' : null,
+							//stroke: 'black',
+							//strokeWidth: 4,
+							offset  : [25, 25]
+						});
+
+						group.add(objects["girl" + (i + 1)]);
+					}
+
+					layer.add(group);
+
+					objects["group1"] = group;
+				}
+			}); 
+
+
+
+
+if (window.location.hostname == "movesync.us")
+{
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38997354-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+}
+		</script>
+
+	</body>
+</html>

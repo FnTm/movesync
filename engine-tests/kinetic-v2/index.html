@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>moveSync.us - dance</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div class="container-fluid">
+			 <audio controls>
+			 </audio>
+		</div>
+		 
+		<div id="container"></div>
+
+		<script src="../jquery.min.js" type="text/javascript"></script>
+		<script src="../player.js"></script>
+		<script src="http://www.html5canvastutorials.com/libraries/kinetic-v4.3.0-beta2.js"></script>
+		<script type="text/javascript">
+			var stage;
+
+			var layer;
+
+			var animation;
+
+			var objects = {};
+
+			var setAnimation = function(f) {
+				if (animation)
+					animation.stop();
+
+				animation = new Kinetic.Animation(f, layer);
+
+				animation.start();
+			}
+
+			var setFrame = function(time) {
+				switch(time) {
+					case 0:
+						{
+							
+						}
+						break;
+					case 1:
+						{
+							setAnimation(function(frame) {
+								var angularSpeed = Math.PI / 2;
+			
+								var angleDiff = frame.timeDiff * angularSpeed / 1000;
+								objects["group1"].rotate(angleDiff);
+							});
+						}
+						break;
+					case 2:
+						{
+							objects["boy1"].transitionTo({
+								x : 125,
+								y : 125,
+								rotation : Math.PI,
+								duration : 4
+							});
+							objects["girl1"].transitionTo({
+								x : 875,
+								y : 875,
+								rotation : Math.PI,
+								duration : 4
+							});
+							setAnimation(function(frame) {});
+						}
+						break;
+					case 3:
+						{
+							objects["boy1"].transitionTo({
+								x : 875,
+								y : 100,
+								rotation : Math.PI * 2,
+								duration : 4
+							});
+							objects["girl1"].transitionTo({
+								x : 850,
+								y : 125,
+								rotation : Math.PI * 2,
+								duration : 4
+							});
+							setAnimation(function(frame) {});
+						}
+						break;
+					case 4:
+						{
+							objects["group3"] = new Kinetic.Group({
+								x: 812,
+								y: 112,
+								//rotationDeg: 0,
+								offset : [0,0]
+							});
+
+							objects["boy1"].setX(12);
+							objects["boy1"].setY(-12);
+							objects["girl1"].setX(-12);
+							objects["girl1"].setX(12);
+
+
+							//objects["group1"].removeChildren();
+							
+
+							objects["group3"].add(objects["boy1"]);
+							objects["group3"].add(objects["girl1"]);
+
+							objects["group1"].add(objects["group3"]);
+
+							objects["group3"].transitionTo({
+								rotation : Math.PI * 2,
+								duration : 10
+							});
+
+							setAnimation(function(frame) {});
+						}
+						break;
+				}
+				console.log(time);
+			}
+
+			$(document).ready(function(){
+				movesync.player.initPlayer([1,2,6,10,15], setFrame);
+
+				stage = new Kinetic.Stage({
+					container: 'container',
+					width: 1000,
+					height: 1000
+				});
+
+				layer = new Kinetic.Layer();
+
+				stage.add(layer);
+
+				setAnimation(function(frame) {console.log('me')});
+
+				{
+					var group = new Kinetic.Group({
+						x: 500,
+						y: 500,
+						rotationDeg: 0,
+						offset : [500,500]
+					});
+
+					var a = new Kinetic.Rect({
+						x: 625,
+						y: 625,
+						width: 30,
+						height: 30,
+						fill: 'blue',
+						stroke: 'black',
+						strokeWidth: 4
+					});
+
+					var b = new Kinetic.Rect({
+						x: 375,
+						y: 375,
+						width: 30,
+						height: 30,
+						fill: 'red',
+						stroke: 'black',
+						strokeWidth: 4
+					});
+
+					group.add(a);
+					group.add(b);
+
+					layer.add(group);
+
+					objects["boy1"] = a;
+					objects["girl1"] = b;
+					objects["group1"] = group;
+				}
+			}); 
+		</script>
+	</body>
+</html>

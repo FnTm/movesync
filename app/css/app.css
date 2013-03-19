@@ -182,7 +182,12 @@ body {
 }
 .tank{
     background-image: url("../assets/tank.png");
-    
+}
+.ragnar{
+    background-image: url("../assets/ragnar.png");
+}
+.maarika{
+    background-image: url("../assets/maarika.png");
 }
 .example .dancer .tank{
     width: 50px;
